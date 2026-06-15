@@ -1,0 +1,64 @@
+---
+const units = [
+  { key: 'days', label: 'DÍAS' },
+  { key: 'hours', label: 'HORAS' },
+  { key: 'minutes', label: 'MIN' },
+  { key: 'seconds', label: 'SEG' },
+];
+---
+
+<section class="site-section py-8 lg:py-12">
+  <div class="site-container">
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4 lg:gap-5">
+      {units.map((unit) => (
+        <div
+          class="flex aspect-[644/716] flex-col items-center justify-center rounded-[20px] border border-white bg-[#282828] px-3 py-6 text-center lg:px-4 lg:py-8"
+        >
+          <p
+            class="font-sora text-3xl font-bold text-probusiness-naranja sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+            data-unit={unit.key}
+          >
+            00
+          </p>
+          <p
+            class="mt-2 font-epilogue text-[10px] font-semibold tracking-[0.2em] text-white/70 uppercase sm:text-xs lg:text-sm"
+            data-label={unit.key}
+          >
+            {unit.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const target = new Date();
+  target.setDate(target.getDate() + 2);
+  target.setHours(target.getHours() + 15);
+  target.setMinutes(37);
+  target.setSeconds(28);
+
+  function pad(n: number) {
+    return String(n).padStart(2, '0');
+  }
+
+  function tick() {
+    const diff = Math.max(0, target.getTime() - Date.now());
+    const s = Math.floor(diff / 1000);
+    const values: Record<string, number> = {
+      days: Math.floor(s / 86400),
+      hours: Math.floor((s % 86400) / 3600),
+      minutes: Math.floor((s % 3600) / 60),
+      seconds: s % 60,
+    };
+
+    document.querySelectorAll('[data-unit]').forEach((el) => {
+      const unit = el.getAttribute('data-unit');
+      if (unit) el.textContent = pad(values[unit] ?? 0);
+    });
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>

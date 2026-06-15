@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-probusiness-naranja: #ff6a29;
+  --color-probusiness-naranja-dark: #ff5410;
+  --color-probusiness-naranja-light: #ff733b;
+  --color-probusiness-orange-header: #ee4815;
+  --color-probusiness-badge-border: #da4307;
+  --font-sora: "Sora", sans-serif;
+  --font-epilogue: "Epilogue", sans-serif;
+  --site-max: 1600px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-epilogue);
+  background-color: #000;
+  color: #fff;
+}
+
+.font-sora {
+  font-family: var(--font-sora);
+}
+
+.font-epilogue {
+  font-family: var(--font-epilogue);
+}
+
+/* Padding lateral: Figma 299px @ 3973px → ~120px @ 1600px */
+.site-container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 7.55vw, 7.5rem);
+}
+
+.site-section {
+  padding-block: clamp(3.5rem, 8vw, 5rem);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff5410 0%, #ff733b 75.48%);
+  box-shadow: 0 4px 70px 22px rgba(255, 84, 16, 0.78);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 80px 28px rgba(255, 84, 16, 0.85);
+}
+
+.text-gradient-pro {
+  background: linear-gradient(90deg, #ff5410 0%, #ff733b 75.48%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-glow {
+  box-shadow: 0 4px 94.4px 8px rgba(255, 106, 41, 0.39);
+}
+
+.badge-curso-vivo {
+  background: linear-gradient(180deg, #ff540a 0%, #ff6a29 100%);
+  border: 1px solid #da4307;
+}
+
+.header-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}

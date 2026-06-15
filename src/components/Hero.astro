@@ -1,0 +1,136 @@
+---
+import ClassBar from './ClassBar.astro';
+
+const badges = [
+  {
+    lines: ['Sin', 'experiencia', 'previa'],
+    icons: [
+      { src: '/images/sections/02-hero/icon-plane.svg', class: 'h-6 w-8 lg:h-8 lg:w-10' },
+      { src: '/images/sections/02-hero/icon-ship.svg', class: 'h-6 w-7 lg:h-8 lg:w-9' },
+    ],
+  },
+  {
+    lines: ['Desde', 'Perú', 'sin viajar'],
+    icons: [
+      { src: '/images/sections/02-hero/icon-peru.svg', class: 'h-8 w-8 lg:h-9 lg:w-9' },
+      { src: '/images/sections/02-hero/icon-plane.svg', class: 'h-5 w-7 lg:h-7 lg:w-9' },
+      { src: '/images/sections/02-hero/icon-ship.svg', class: 'h-5 w-6 lg:h-7 lg:w-8' },
+    ],
+  },
+  {
+    lines: ['Respaldado', 'por la CCL'],
+    icons: [{ src: '/images/sections/02-hero/logo-ccl.png', class: 'h-7 w-auto lg:h-9' }],
+    wide: true,
+  },
+];
+---
+
+<section id="inicio" class="relative overflow-hidden bg-black pt-[72px] lg:pt-[97px]">
+  <img
+    src="/images/sections/02-hero/bg-hero.png"
+    alt=""
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50"
+    aria-hidden="true"
+  />
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black"></div>
+
+  <div class="relative">
+    <div class="site-container pb-8 lg:pb-12">
+      <div class="relative lg:min-h-[580px] xl:min-h-[640px]">
+        <!-- Imagen derecha (Figma: x=2031, superpuesta desde arriba) -->
+        <div
+          class="pointer-events-none absolute right-[-2%] top-[-40px] z-0 hidden w-[50%] max-w-[700px] lg:block xl:right-[-1%] xl:w-[48%] xl:max-w-[720px]"
+        >
+          <img
+            src="/images/sections/02-hero/hero-cajas.png"
+            alt="Profesionales celebrando una importación exitosa entre Perú y China"
+            class="w-full object-contain"
+            width="1790"
+            height="1790"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Columna izquierda -->
+        <div class="relative z-10 lg:max-w-[54%] xl:max-w-[52%]">
+          <div
+            class="badge-curso-vivo inline-flex h-11 items-center gap-2.5 rounded-[16px] px-4 sm:h-12 sm:gap-3 sm:px-5 lg:h-[58px] lg:gap-4 lg:rounded-[20px] lg:px-6"
+          >
+            <img
+              src="/images/sections/02-hero/icon-curso-vivo.svg"
+              alt=""
+              class="h-7 w-7 shrink-0 lg:h-9 lg:w-9"
+              width="60"
+              height="60"
+              aria-hidden="true"
+            />
+            <span class="font-sora text-sm font-medium tracking-wide text-white uppercase lg:text-xl xl:text-2xl">
+              CURSO EN VIVO
+            </span>
+          </div>
+
+          <div class="mt-6 space-y-4 lg:mt-8 lg:space-y-5">
+            <h1
+              class="font-sora text-[clamp(1.65rem,3.5vw,3.5rem)] leading-[1.05] font-semibold tracking-[-0.04em] text-white"
+            >
+              <span class="font-medium">Aprende a importar desde China y crea un </span>
+              <span class="font-semibold">negocio rentable en Perú</span>
+            </h1>
+            <p
+              class="font-epilogue text-base font-medium leading-snug text-white/90 lg:text-xl xl:text-[1.75rem] xl:leading-[1.26]"
+            >
+              Paso a paso, sin complicaciones y desde cero.
+            </p>
+          </div>
+
+          <!-- Tarjetas: proporción Figma 514 : 514 : 570 -->
+          <div class="hero-cards mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-3 lg:mt-8 lg:gap-4">
+            {badges.map((badge) => (
+              <div
+                class:list={[
+                  'flex min-h-[100px] flex-col justify-between rounded-[16px] border border-white bg-black/40 p-3.5 backdrop-blur-sm lg:min-h-[106px] lg:rounded-[20px] lg:p-4',
+                  badge.wide && 'sm:col-span-1',
+                ]}
+              >
+                <div class="mb-2 flex flex-wrap items-center gap-1.5 lg:gap-2">
+                  {badge.icons.map((icon) => (
+                    <img src={icon.src} alt="" class:list={[icon.class, 'shrink-0 object-contain']} aria-hidden="true" />
+                  ))}
+                </div>
+                <div class="font-epilogue text-xs leading-[0.93] text-white lg:text-base xl:text-lg">
+                  {badge.lines.map((line, i) => (
+                    <p class:list={[i === 1 && badge.lines.length === 3 ? 'font-medium' : 'font-normal']}>{line}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Imagen móvil -->
+        <div class="relative z-0 mt-6 flex justify-center lg:hidden">
+          <img
+            src="/images/sections/02-hero/hero-cajas.png"
+            alt="Profesionales celebrando una importación exitosa entre Perú y China"
+            class="w-full max-w-sm object-contain"
+            width="1790"
+            height="1790"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      <div class="header-divider mt-8 pt-8 lg:mt-10 lg:pt-10">
+        <ClassBar />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 640px) {
+    .hero-cards {
+      grid-template-columns: minmax(0, 514fr) minmax(0, 514fr) minmax(0, 570fr);
+    }
+  }
+</style>

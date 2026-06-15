@@ -1,0 +1,44 @@
+---
+const testimonials = [
+  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-1.png' },
+  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-2.png' },
+  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-3.png' },
+  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-4.png' },
+];
+---
+
+<section class="site-section relative overflow-hidden">
+  <img
+    src="/images/sections/08-testimonials/bg-section.png"
+    alt=""
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+    aria-hidden="true"
+  />
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+
+  <div class="site-container relative">
+    <h2 class="mb-4 text-center font-sora text-3xl font-bold text-white md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
+      Ellos ya están importando con éxito
+    </h2>
+    <p class="mb-10 text-center font-epilogue text-lg text-white/60 lg:mb-14 lg:text-2xl xl:text-3xl">
+      Vídeos Testimoniales
+    </p>
+
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      {testimonials.map((t) => (
+        <button
+          type="button"
+          class="overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-[1.02]"
+          aria-label={`Reproducir testimonio de ${t.name}`}
+        >
+          <img
+            src={t.image}
+            alt={`Testimonio de ${t.name}`}
+            class="aspect-[861/1486] w-full object-cover"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+</section>

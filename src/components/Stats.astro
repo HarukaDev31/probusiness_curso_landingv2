@@ -1,0 +1,67 @@
+---
+const stats = [
+  { value: '+10 años', label: 'De experiencia', icon: '/images/sections/03-video-stats/icon-experiencia.svg' },
+  { value: '+5.000', label: 'Alumnos formados', icon: '/images/sections/03-video-stats/icon-alumnos.svg' },
+  { value: '+500', label: 'Importaciones realizadas', icon: '/images/sections/03-video-stats/icon-importaciones.svg' },
+];
+---
+
+<section class="site-section relative">
+  <div class="site-container">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div id="video" class="relative overflow-hidden rounded-[20px]">
+        <img
+          src="/images/sections/03-video-stats/video-thumbnail.png"
+          alt="Vista previa del curso en videollamada"
+          class="aspect-[2134/1579] w-full object-cover"
+          width="2134"
+          height="1579"
+        />
+        <button
+          class="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105 lg:h-32 lg:w-32 xl:h-36 xl:w-36"
+          aria-label="Reproducir video"
+        >
+          <img
+            src="/images/sections/03-video-stats/play-overlay.svg"
+            alt=""
+            class="h-10 w-10 object-contain lg:h-16 lg:w-16 xl:h-20 xl:w-20"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+
+      <div class="space-y-8 lg:space-y-10">
+        <h2 class="font-epilogue text-3xl leading-[1.03] tracking-[-0.03em] text-white md:text-4xl lg:text-5xl xl:text-[4.5rem]">
+          <span class="font-medium">¿Por qué</span>
+          <span class="font-normal"> importar</span>
+          <br />
+          <span class="font-normal"> de China?</span>
+        </h2>
+
+        <div class="divide-y divide-white/15">
+          {stats.map((stat) => (
+            <div class="flex items-center gap-5 py-6 first:pt-0 last:pb-0 lg:gap-8 lg:py-8">
+              <img
+                src={stat.icon}
+                alt=""
+                class="h-14 w-14 shrink-0 object-contain lg:h-20 lg:w-20 xl:h-24 xl:w-24"
+                aria-hidden="true"
+              />
+              <div>
+                <p class="font-sora text-3xl font-bold text-probusiness-naranja lg:text-4xl xl:text-5xl">{stat.value}</p>
+                <p class="font-epilogue text-base text-white/80 lg:text-xl">{stat.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href="#contacto"
+          class="btn-primary inline-flex w-full items-center justify-center rounded-[20px] px-8 py-4 font-epilogue text-lg font-bold text-white sm:w-auto lg:text-2xl lg:py-5"
+        >
+          Quiero empezar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

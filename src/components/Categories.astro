@@ -1,0 +1,59 @@
+---
+const categories = [
+  { name: 'Tecnología', image: '/images/sections/07-categories/tecnologia.png', span: 'cat-tall' },
+  { name: 'Vehículos', image: '/images/sections/07-categories/vehiculos.png', span: '' },
+  { name: 'Juguetes', image: '/images/sections/07-categories/juguetes.png', span: '' },
+  { name: 'Maletas', image: '/images/sections/07-categories/maletas.png', span: '' },
+  { name: 'Joyas', image: '/images/sections/07-categories/joyas.png', span: '' },
+  { name: 'Y más', image: '/images/sections/07-categories/y-mas.png', span: 'cat-wide' },
+];
+---
+
+<section class="site-section relative">
+  <div class="site-container">
+    <div class="cat-grid">
+      {categories.map((cat) => (
+        <div class={`cat-cell group relative overflow-hidden rounded-[20px] ${cat.span}`}>
+          <img
+            src={cat.image}
+            alt={cat.name}
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <h3 class="absolute bottom-4 left-4 font-sora text-xl font-semibold text-white lg:bottom-6 lg:left-6 lg:text-3xl">
+            {cat.name}
+          </h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    grid-auto-rows: minmax(160px, 1fr);
+  }
+  @media (min-width: 1024px) {
+    .cat-grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 0.75rem;
+    }
+    .cat-tall {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .cat-wide {
+      grid-column: span 2;
+    }
+  }
+  @media (min-width: 1280px) {
+    .cat-grid {
+      grid-auto-rows: 240px;
+    }
+  }
+</style>
