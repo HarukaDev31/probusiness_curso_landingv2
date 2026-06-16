@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { asset } from '../lib/assets';
 
 interface Props {
   title?: string;
@@ -22,8 +23,9 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/sections/02-hero/hero-cajas.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:image" content={asset('/images/sections/02-hero/hero-cajas.png')} />
+    <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+    <link rel="preconnect" href="https://cdn.probusiness.pe" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

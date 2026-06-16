@@ -1,12 +1,12 @@
 <section id="planes" class="pricing-section relative overflow-hidden bg-black">
   <div class="pricing-hero-bg pointer-events-none absolute inset-x-0 top-0">
-    <img src="/images/sections/09-pricing/bg.png" alt="" aria-hidden="true" />
+    <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/bg.png" alt="" aria-hidden="true" />
     <div class="pricing-hero-fade absolute inset-0" aria-hidden="true"></div>
   </div>
   <div class="pricing-hero-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" aria-hidden="true"></div>
 
   <img
-    src="/images/sections/09-pricing/box-desktop.png"
+    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/box-desktop.png"
     alt=""
     class="pointer-events-none absolute right-[0%] top-[4%] z-20 hidden w-[min(28vw,340px)] object-contain lg:block xl:w-[380px]"
     aria-hidden="true"
@@ -14,7 +14,7 @@
   />
 
   <img
-    src="/images/sections/09-pricing/box-mobile.png"
+    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/box-mobile.png"
     alt=""
     class="pricing-box-mobile pointer-events-none absolute z-20 lg:hidden"
     aria-hidden="true"
@@ -241,7 +241,7 @@
     <div class="pricing-promo pricing-promo--desktop hidden lg:flex">
       <div class="pricing-code">
         <img
-          src="/images/sections/09-pricing/cohete.png"
+          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/cohete.png"
           alt=""
           class="pricing-code__rocket"
           aria-hidden="true"
@@ -264,7 +264,7 @@
                 >
                   <div class="flex flex-col items-center gap-2">
                     <img
-                      src="/images/sections/09-pricing/icon-copy.svg"
+                      src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/icon-copy.svg"
                       alt=""
                       width="20"
                       height="20"
@@ -312,7 +312,7 @@
     <div class="pricing-promo pricing-promo--mobile lg:hidden">
       <div class="pricing-code">
         <img
-          src="/images/sections/09-pricing/cohete.png"
+          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/cohete.png"
           alt=""
           class="pricing-code__rocket"
           aria-hidden="true"
@@ -336,7 +336,7 @@
               aria-label="Copiar código CURSOPRO"
             >
               <img
-                src="/images/sections/09-pricing/icon-copy.svg"
+                src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/icon-copy.svg"
                 alt=""
                 class="pricing-code__copy-icon"
                 width="20"
@@ -420,7 +420,13 @@
   }
 
   .pricing-cards--desktop {
+    display: none;
     min-height: 620px;
+  }
+
+  .pricing-promo--desktop,
+  .pricing-promo--mobile {
+    display: none;
   }
 
   .pricing-card {
@@ -681,19 +687,6 @@
     background: #3a3a3a;
     color: rgba(255, 255, 255, 0.35);
     cursor: not-allowed;
-  }
-
-  .pricing-cards--desktop {
-    display: none;
-    min-height: 620px;
-  }
-
-  .pricing-promo--desktop {
-    display: none;
-  }
-
-  .pricing-promo--mobile {
-    display: none;
   }
 
   .pricing-code {
