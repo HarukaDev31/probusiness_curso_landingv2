@@ -10,7 +10,6 @@ import Categories from '../components/Categories.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Benefits from '../components/Benefits.astro';
 import Pricing from '../components/Pricing.astro';
-import Countdown from '../components/Countdown.astro';
 import FAQ from '../components/FAQ.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Footer from '../components/Footer.astro';
@@ -23,11 +22,11 @@ import Footer from '../components/Footer.astro';
     <Stats />
     <Features />
     <BeforeAfter />
-    <Instructor />
-    <Categories />
-    <Testimonials />
+    <div class="categories-testimonials-group">
+      <Categories />
+      <Testimonials />
+    </div>
     <Pricing />
-    <Countdown />
     <Benefits />
     <FAQ />
     <ContactForm />

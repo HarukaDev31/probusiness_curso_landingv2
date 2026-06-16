@@ -1,95 +1,523 @@
-<section id="contacto" class="site-section relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-t from-probusiness-naranja/10 to-transparent"></div>
+---
+const fields = [
+  {
+    id: 'nombre',
+    name: 'nombre',
+    label: 'Nombre Completo',
+    type: 'text' as const,
+    placeholder: 'e.g José Gutiérrez',
+  },
+  {
+    id: 'whatsapp',
+    name: 'whatsapp',
+    label: 'Número de WhatsApp',
+    type: 'tel' as const,
+    placeholder: '999 999 999',
+  },
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Correo electrónico',
+    type: 'email' as const,
+    placeholder: 'jgutierrezl@example.com',
+  },
+];
+---
 
-  <div class="site-container relative">
-    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <div class="relative hidden min-h-[420px] lg:block xl:min-h-[500px]">
-        <img
-          src="/images/sections/13-contact/caja-producto.png"
-          alt=""
-          class="absolute bottom-0 left-0 w-[85%] max-w-lg object-contain"
-          aria-hidden="true"
-          loading="lazy"
-        />
-      </div>
+<section id="contacto" class="contact-section">
+  <div class="contact-layout">
+    <div class="contact-visual" aria-hidden="true">
+      <img
+        src="/images/sections/13-contact/bg-left.png"
+        alt=""
+        class="contact-visual__bg"
+        loading="lazy"
+      />
+      <img
+        src="/images/sections/13-contact/puntos.svg"
+        alt=""
+        class="contact-visual__puntos"
+        loading="lazy"
+      />
+      <img
+        src="/images/sections/13-contact/caja-producto.png"
+        alt=""
+        class="contact-visual__caja"
+        loading="lazy"
+      />
+      <div class="contact-visual__fade" aria-hidden="true"></div>
+    </div>
 
-      <div>
-        <h2 class="mb-8 font-sora text-3xl font-bold leading-tight text-white md:text-4xl lg:mb-10 lg:text-5xl">
-          Tu próxima importación, cada vez más cerca
-        </h2>
+    <div class="contact-panel">
+      <h2 class="contact-panel__title">
+        <span class="contact-panel__title-sm">Tu próxima importación,</span>
+        <span class="contact-panel__title-lg">
+          cada vez <span class="contact-panel__accent">más cerca</span>
+        </span>
+      </h2>
 
-        <form class="space-y-5" id="contact-form">
-          <div>
-            <label for="nombre" class="mb-2 block font-epilogue text-sm font-medium text-white/80">Nombre Completo</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="e.g José Gutiérrez"
-              class="w-full rounded-[20px] border border-white/15 bg-white/5 px-5 py-4 font-epilogue text-white placeholder:text-white/35 focus:border-probusiness-naranja focus:outline-none lg:px-6 lg:py-5"
-            />
-          </div>
+      <form class="contact-panel__form" id="contact-form">
+        {
+          fields.map((field) => (
+            <div class="contact-field">
+              <label for={field.id}>{field.label}</label>
+              <input
+                type={field.type}
+                id={field.id}
+                name={field.name}
+                placeholder={field.placeholder}
+              />
+            </div>
+          ))
+        }
 
-          <div>
-            <label for="whatsapp" class="mb-2 block font-epilogue text-sm font-medium text-white/80">Número de WhatsApp</label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              placeholder="999 999 999"
-              class="w-full rounded-[20px] border border-white/15 bg-white/5 px-5 py-4 font-epilogue text-white placeholder:text-white/35 focus:border-probusiness-naranja focus:outline-none lg:px-6 lg:py-5"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="mb-2 block font-epilogue text-sm font-medium text-white/80">Correo electrónico</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="jgutierrezl@example.com"
-              class="w-full rounded-[20px] border border-white/15 bg-white/5 px-5 py-4 font-epilogue text-white placeholder:text-white/35 focus:border-probusiness-naranja focus:outline-none lg:px-6 lg:py-5"
-            />
-          </div>
-
-          <div>
-            <label for="experiencia" class="mb-2 block font-epilogue text-sm font-medium text-white/80">¿Tienes experiencia importando?</label>
-            <select
-              id="experiencia"
-              name="experiencia"
-              class="w-full appearance-none rounded-[20px] border border-white/15 bg-white/5 px-5 py-4 font-epilogue text-white focus:border-probusiness-naranja focus:outline-none lg:px-6 lg:py-5"
-            >
-              <option value="" class="bg-black">Selecciona una opción</option>
-              <option value="si" class="bg-black">Sí, tengo experiencia</option>
-              <option value="no" class="bg-black">No, soy principiante</option>
-              <option value="poca" class="bg-black">Tengo poca experiencia</option>
+        <div class="contact-field">
+          <label for="experiencia">¿Tienes experiencia importando?</label>
+          <div class="contact-field__select">
+            <select id="experiencia" name="experiencia">
+              <option value="">Selecciona una opción</option>
+              <option value="si">Sí, tengo experiencia</option>
+              <option value="no">No, soy principiante</option>
+              <option value="poca">Tengo poca experiencia</option>
             </select>
+            <img
+              src="/images/sections/13-contact/chevron-select.svg"
+              alt=""
+              aria-hidden="true"
+            />
           </div>
+        </div>
 
-          <button
-            type="submit"
-            class="btn-primary w-full rounded-[20px] py-4 font-epilogue text-xl font-bold text-white lg:py-5 lg:text-2xl"
-          >
-            Inscribirme ahora
-          </button>
+        <button type="submit" class="contact-panel__submit">
+          Inscribirme ahora
+        </button>
 
-          <p id="form-success" class="hidden text-center font-epilogue text-sm text-probusiness-naranja">
-            ¡Gracias! Un asesor te contactará pronto.
-          </p>
-          <p class="text-center font-epilogue text-sm text-white/60">
-            Un asesor te contactará para confirmar tu inscripción
-          </p>
-        </form>
-      </div>
+        <p id="form-success" class="contact-panel__success hidden">
+          ¡Gracias! Un asesor te contactará pronto.
+        </p>
+
+        <p class="contact-panel__note">
+          Un asesor te contactará para confirmar tu inscripción
+        </p>
+      </form>
     </div>
   </div>
 </section>
 
+<style>
+  /* Figma 4250×3034 → escala por ancho manteniendo proporción */
+  .contact-section {
+    --fw: 4250;
+    --fh: 3034;
+    --ratio: calc(var(--fh) / var(--fw));
+    container-type: inline-size;
+    width: 100%;
+    background-color: #1d1d1d;
+    overflow: hidden;
+    aspect-ratio: var(--fw) / var(--fh);
+    min-height: clamp(36rem, calc(100vw * var(--ratio)), 90rem);
+  }
+
+  .contact-layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+  }
+
+  /* —— Columna izquierda (imagen + caja) —— */
+  .contact-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .contact-visual__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 109.56%;
+    top: -9.55%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .contact-visual__puntos {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .contact-visual__caja {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 13.8%;
+    width: 100%;
+    height: 86.2%;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .contact-visual__fade {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24%;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      rgba(29, 29, 29, 0) 0%,
+      rgba(29, 29, 29, 0.55) 55%,
+      #1d1d1d 100%
+    );
+  }
+
+  /* —— Columna derecha (formulario) —— */
+  .contact-panel {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 4em;
+    margin-left: 2em;
+    min-width: 0;
+    background-color: #1d1d1d;
+  }
+
+  .contact-panel__title {
+    margin: 0 0 4.5%;
+    font-family: var(--font-epilogue);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.18cqw;
+    line-height: 0.97;
+  }
+
+  .contact-panel__title-sm {
+    display: block;
+    font-size: clamp(1.25rem, 3.01cqw, 8rem);
+  }
+
+  .contact-panel__title-lg {
+    display: block;
+    font-size: clamp(1.5rem, 3.76cqw, 10rem);
+  }
+
+  .contact-panel__accent {
+    color: #ff6a29;
+  }
+
+  .contact-panel__form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 1.35cqw, 2rem);
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.35rem, 0.55cqw, 0.85rem);
+  }
+
+  .contact-field label {
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.8rem, 1.84cqw, 4.875rem);
+    font-weight: 600;
+    line-height: 1.26;
+    color: #fff;
+  }
+
+  .contact-field input,
+  .contact-field__select select {
+    width: 100%;
+    height: clamp(2.75rem, 5.25cqw, 14rem);
+    padding-inline: clamp(0.85rem, 2.52cqw, 6.7rem);
+    border: 1px solid #000;
+    border-radius: clamp(8px, 0.47cqw, 20px);
+    background-color: #000;
+    color: #fff;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.8rem, 1.84cqw, 4.875rem);
+    font-weight: 400;
+    line-height: 1.26;
+    outline: none;
+    appearance: none;
+  }
+
+  .contact-field input::placeholder {
+    color: #9c9c9c;
+  }
+
+  .contact-field input:focus,
+  .contact-field__select select:focus {
+    border-color: #ff6a29;
+  }
+
+  .contact-field__select {
+    position: relative;
+    width: 100%;
+  }
+
+  .contact-field__select select {
+    color: #9c9c9c;
+  }
+
+  .contact-field__select img {
+    position: absolute;
+    right: clamp(0.85rem, 2.52cqw, 6.7rem);
+    top: 50%;
+    width: clamp(0.9rem, 1.05cqw, 1.75rem);
+    aspect-ratio: 89 / 51;
+    height: auto;
+    transform: translateY(-50%);
+    pointer-events: none;
+    object-fit: contain;
+  }
+
+  .contact-panel__submit {
+    margin-top: clamp(0.25rem, 0.8cqw, 1rem);
+    width: 100%;
+    height: clamp(3rem, 4.59cqw, 12.2rem);
+    border: none;
+    border-radius: clamp(8px, 0.47cqw, 20px);
+    background: linear-gradient(90deg, #ff5410 0%, #ff733b 75.48%);
+    box-shadow: 0 4px 70px 22px rgba(255, 84, 16, 0.78);
+    font-family: var(--font-epilogue);
+    font-size: clamp(1rem, 2.35cqw, 6.25rem);
+    font-weight: 700;
+    line-height: 1.26;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .contact-panel__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 80px 28px rgba(255, 84, 16, 0.85);
+  }
+
+  .contact-panel__note {
+    margin: clamp(0.5rem, 1.2cqw, 1.5rem) 0 0;
+    text-align: center;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.75rem, 1.51cqw, 4rem);
+    font-weight: 400;
+    line-height: 1.26;
+    color: #fff;
+  }
+
+  .contact-panel__success {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.75rem, 1.51cqw, 4rem);
+    font-weight: 600;
+    color: #ff6a29;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-visual__puntos {
+      display: none;
+    }
+
+    .contact-visual__bg {
+      height: 109.56%;
+      top: -9.55%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .contact-visual__caja {
+      left: 50%;
+      top: auto;
+      bottom: 0;
+      width: 92%;
+      height: 88%;
+      transform: translateX(-50%);
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .contact-visual__fade {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: auto;
+      width: 24%;
+      height: auto;
+      background: linear-gradient(
+        to right,
+        rgba(29, 29, 29, 0) 0%,
+        rgba(29, 29, 29, 0.55) 55%,
+        #1d1d1d 100%
+      );
+    }
+  }
+
+  /* Tablet / móvil — Figma node 849:14 */
+  @media (max-width: 1023px) {
+    .contact-section {
+      aspect-ratio: auto;
+      min-height: auto;
+      background-color: #1d1d1d;
+    }
+
+    .contact-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 0;
+    }
+
+    .contact-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1789 / 1617;
+      max-height: none;
+      min-height: clamp(18rem, 90vw, 28rem);
+    }
+
+    .contact-visual__bg {
+      height: 162%;
+      top: -14%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .contact-visual__puntos {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 8%;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    .contact-visual__caja {
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 89%;
+      height: 100%;
+      transform: translateX(-50%);
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .contact-visual__fade {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(
+        to bottom,
+        rgba(29, 29, 29, 0) 0%,
+        rgba(29, 29, 29, 0.7) 45%,
+        #1d1d1d 100%
+      );
+    }
+
+    .contact-panel {
+      position: relative;
+      z-index: 4;
+      margin-top: 0;
+      margin-left: 0;
+      padding: clamp(1.25rem, 4.5vw, 1.75rem) clamp(1.25rem, 5vw, 1.75rem)
+        clamp(2rem, 6vw, 2.5rem);
+    }
+
+    .contact-panel__title {
+      margin-bottom: clamp(1.5rem, 5vw, 2rem);
+      text-align: left;
+    }
+
+    .contact-panel__title-sm {
+      font-size: clamp(1.5rem, 6.7vw, 2rem);
+      margin-bottom: 0.15rem;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-panel__title-lg {
+      font-size: clamp(1.6rem, 7.1vw, 2.15rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact-panel__form {
+      gap: 0;
+    }
+
+    .contact-panel__form > .contact-field {
+      margin-bottom: 1.125rem;
+    }
+
+    .contact-panel__form > .contact-field:last-of-type {
+      margin-bottom: 1.375rem;
+    }
+
+    .contact-field {
+      gap: 0.5rem;
+    }
+
+    .contact-field label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .contact-field input,
+    .contact-field__select select {
+      font-size: 0.9375rem;
+      height: 3.5rem;
+      padding-inline: 1.25rem;
+      border-radius: 12px;
+    }
+
+    .contact-field__select img {
+      right: 1.25rem;
+      width: 0.85rem;
+    }
+
+    .contact-panel__submit {
+      margin-top: 0;
+      height: 3.75rem;
+      font-size: 1.125rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 40px 12px rgba(255, 84, 16, 0.65);
+    }
+
+    .contact-panel__note,
+    .contact-panel__success {
+      font-size: 0.8125rem;
+      line-height: 1.35;
+    }
+
+    .contact-panel__note {
+      margin-top: 0.875rem;
+    }
+  }
+</style>
+
 <script>
   document.getElementById('contact-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const success = document.getElementById('form-success');
-    success?.classList.remove('hidden');
-    (e.target as HTMLFormElement).reset();
+    document.getElementById('form-success')?.classList.remove('hidden');
+    e.target.reset();
   });
 </script>

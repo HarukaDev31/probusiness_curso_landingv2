@@ -1,60 +1,242 @@
----
-const beforeItems = [
-  'No sabes qué producto importar.',
-  'No sabes cómo contactar proveedores.',
-  'Tienes miedo a perder tu dinero.',
-  'No conoces los procesos y todo te parece confuso.',
-  'Tu negocio no avanza.',
-];
-
-const afterItems = [
-  'Encuentras productos rentables.',
-  'Contactas fácilmente con proveedores confiables.',
-  'Calculas costos reales y aumentas tu margen de ganancia.',
-  'Importas sin riesgo ni complicaciones.',
-  'Empiezas a potenciar tu negocio.',
-];
----
-
-<section id="beneficios" class="site-section relative overflow-hidden">
+<section id="beneficios" class="before-after-section relative">
   <img
     src="/images/sections/05-before-after/bg-puerto.png"
     alt=""
-    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+    class="before-after-section__bg pointer-events-none h-full w-full object-cover opacity-20"
     aria-hidden="true"
   />
+  <div class="before-after-section__fade before-after-section__fade--top" aria-hidden="true"></div>
 
-  <div class="site-container relative">
-    <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-      <div class="rounded-[20px] border border-white/15 bg-zinc-900/85 p-6 backdrop-blur-sm lg:p-10">
-        <div class="mb-8 flex flex-col items-center gap-4 text-center">
-          <img src="/images/sections/05-before-after/icon-antes.svg" alt="" class="h-24 w-24 object-contain lg:h-36 lg:w-36" aria-hidden="true" />
-          <h3 class="font-sora text-2xl font-bold text-white/70 md:text-3xl lg:text-4xl xl:text-5xl">Antes del curso</h3>
+  <div class="before-after-section__cards relative z-10 mx-auto w-[90%] lg:site-container lg:w-full">
+    <div class="before-after-grid grid w-full grid-cols-2 items-stretch lg:mx-auto lg:w-[80%]">
+      <div class="before-after-card before-after-card--antes rounded-l-lg bg-zinc-900/90 backdrop-blur-sm lg:rounded-l-xl lg:rounded-tr-none lg:p-10">
+        <div class="before-after-card__header flex flex-col items-center text-center">
+          <img
+            src="/images/sections/05-before-after/icon-antes.svg"
+            alt=""
+            class="before-after-card__icon-header object-contain"
+            aria-hidden="true"
+          />
+          <h3 class="before-after-card__title font-sora font-normal text-white/70">
+            Antes
+            <br />
+            del curso
+          </h3>
         </div>
-        <ul class="space-y-4 lg:space-y-5">
-          {beforeItems.map((item) => (
-            <li class="flex items-start gap-3 font-epilogue text-sm text-white/80 lg:gap-4 lg:text-lg">
-              <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="mt-1 h-5 w-5 shrink-0 object-contain lg:h-6 lg:w-6" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
+        <ul class="before-after-card__list">
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-white/50">No sabes qué producto importar.</span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-white/50">No sabes cómo contactar proveedores.</span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-white/50">Tienes miedo a perder tu dinero.</span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-white/50">No conoces los procesos y todo te parece confuso.</span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line">Tu negocio no avanza.</span>
+          </li>
         </ul>
+        <img src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" aria-hidden="true" />
       </div>
 
-      <div class="rounded-[20px] border border-probusiness-naranja/50 bg-probusiness-naranja/10 p-6 backdrop-blur-sm lg:p-10">
-        <div class="mb-8 flex flex-col items-center gap-4 text-center">
-          <img src="/images/sections/05-before-after/icon-despues.svg" alt="" class="h-24 w-24 object-contain lg:h-36 lg:w-36" aria-hidden="true" />
-          <h3 class="font-sora text-2xl font-bold text-probusiness-naranja md:text-3xl lg:text-4xl xl:text-5xl">Después del curso</h3>
+      <div class="before-after-card before-after-card--despues rounded-r-lg bg-white lg:rounded-r-xl lg:rounded-bl-none lg:px-10 lg:pt-10">
+        <div class="before-after-card__header flex flex-col items-center text-center">
+          <img
+            src="/images/sections/05-before-after/icon-despues.svg"
+            alt=""
+            class="before-after-card__icon-header object-contain"
+            aria-hidden="true"
+          />
+          <h3 class="before-after-card__title font-sora font-normal">
+            <span class="text-probusiness-naranja">Después</span>
+            <br />
+            <span class="text-black">del curso</span>
+          </h3>
         </div>
-        <ul class="space-y-4 lg:space-y-5">
-          {afterItems.map((item) => (
-            <li class="flex items-start gap-3 font-epilogue text-sm text-white lg:gap-4 lg:text-lg">
-              <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="mt-1 h-5 w-5 shrink-0 object-contain lg:h-6 lg:w-6" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
+        <ul class="before-after-card__list">
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-black/50">
+              Encuentras <strong>productos rentables</strong>.
+            </span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-black/50">
+              Contactas fácilmente con <strong>proveedores confiables</strong>.
+            </span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-black/50">
+              Calculas costos reales y <strong>aumentas tu margen de ganancia</strong>.
+            </span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line border-black/50">
+              <strong>Importas sin riesgo</strong> ni complicaciones.
+            </span>
+          </li>
+          <li class="before-after-card__item">
+            <img src="/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <span class="before-after-card__line">
+              Empiezas a <strong>potenciar tu negocio</strong>.
+            </span>
+          </li>
         </ul>
+        <img src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" aria-hidden="true" />
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .before-after-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    padding: 1rem 0.75rem 0;
+  }
+
+  .before-after-card__header {
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .before-after-card__icon-header {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+
+  .before-after-card__title {
+    font-size: 0.625rem;
+    line-height: 1.05;
+  }
+
+  .before-after-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .before-after-card__item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-epilogue);
+    font-size: 0.65rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .before-after-card--antes .before-after-card__item {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .before-after-card--despues .before-after-card__item {
+    color: #000;
+  }
+
+  .before-after-card__bullet {
+    margin-top: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .before-after-card__line {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 0.35rem;
+    text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  .before-after-card__item:last-child .before-after-card__line {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .before-after-card__photo {
+    margin-top: auto;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .before-after-card__item strong {
+    font-weight: 600;
+  }
+
+  @media (min-width: 1024px) {
+    .before-after-card {
+      padding: 2.5rem 2.5rem 0;
+    }
+
+    .before-after-card__header {
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .before-after-card__icon-header {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .before-after-card__title {
+      font-size: clamp(1.5rem, 2.5vw, 3rem);
+    }
+
+    .before-after-card--antes .before-after-card__title {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .before-after-card__list {
+      gap: 1rem;
+    }
+
+    .before-after-card__item {
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1.875rem;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .before-after-card__bullet {
+      margin-top: 0.25rem;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .before-after-card__line {
+      padding-bottom: 0.5rem;
+      text-align: left;
+    }
+
+    .before-after-card__photo {
+      margin-top: auto;
+    }
+
+    .before-after-card--despues .before-after-card__item {
+      font-size: 1.5rem;
+    }
+  }
+</style>

@@ -1,44 +1,280 @@
 ---
 const testimonials = [
-  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-1.png' },
-  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-2.png' },
-  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-3.png' },
-  { name: 'Jhonny — Racks para TV', image: '/images/sections/08-testimonials/card-4.png' },
+  {
+    image: '/images/sections/08-testimonials/card-1.png',
+    alt: 'Testimonio de Jhonny — Racks para TV',
+    title: ['Jhonny – Racks', 'para TV'],
+  },
+  {
+    image: '/images/sections/08-testimonials/card-2.png',
+    alt: 'Testimonio de importador — Calzado',
+    title: ['María – Calzado', 'deportivo'],
+  },
+  {
+    image: '/images/sections/08-testimonials/card-3.png',
+    alt: 'Testimonio de importador — Tecnología',
+    title: ['Carlos – Accesorios', 'tecnológicos'],
+  },
+  {
+    image: '/images/sections/08-testimonials/card-4.png',
+    alt: 'Testimonio de importador — Hogar',
+    title: ['Lucía – Productos', 'para hogar'],
+  },
 ];
 ---
 
-<section class="site-section relative overflow-hidden">
-  <img
-    src="/images/sections/08-testimonials/bg-section.png"
-    alt=""
-    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
-    aria-hidden="true"
-  />
-  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
-
+<section class="testimonials-section site-section relative overflow-hidden">
   <div class="site-container relative">
-    <h2 class="mb-4 text-center font-sora text-3xl font-bold text-white md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
-      Ellos ya están importando con éxito
+    <h2
+      class="testimonials-heading mb-8 text-center font-epilogue font-medium leading-[0.95] tracking-[-0.06em] text-black lg:mb-10 lg:text-6xl"
+    >
+      <span class="font-semibold text-probusiness-naranja">Vídeos</span>
+      <span> Testimoniales</span>
     </h2>
-    <p class="mb-10 text-center font-epilogue text-lg text-white/60 lg:mb-14 lg:text-2xl xl:text-3xl">
-      Vídeos Testimoniales
-    </p>
 
-    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-      {testimonials.map((t) => (
-        <button
-          type="button"
-          class="overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-[1.02]"
-          aria-label={`Reproducir testimonio de ${t.name}`}
-        >
-          <img
-            src={t.image}
-            alt={`Testimonio de ${t.name}`}
-            class="aspect-[861/1486] w-full object-cover"
-            loading="lazy"
-          />
-        </button>
-      ))}
+    <!-- Mobile: carousel con peek -->
+    <div class="testimonials-carousel lg:hidden" aria-label="Testimonios en video" data-initial-index="1">
+      {
+        testimonials.map((t) => (
+          <article class="testimonials-carousel__slide">
+            <button
+              type="button"
+              class="testimonials-carousel__media"
+              aria-label={`Reproducir ${t.alt}`}
+            >
+              <img
+                src={t.image}
+                alt={t.alt}
+                class="testimonials-carousel__thumb"
+                loading="lazy"
+              />
+              <span class="testimonials-carousel__play" aria-hidden="true">
+                <span class="testimonials-carousel__play-btn">
+                  <img
+                    src="/images/sections/03-video-stats/play-overlay.svg"
+                    alt=""
+                    class="testimonials-carousel__play-icon"
+                  />
+                </span>
+              </span>
+            </button>
+
+            <div class="testimonials-carousel__copy">
+              <p class="testimonials-carousel__label">Caso de éxito</p>
+              <p class="testimonials-carousel__title">
+                {t.title.map((line) => (
+                  <>
+                    {line}
+                    <br />
+                  </>
+                ))}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Desktop: grid -->
+    <div class="hidden gap-6 lg:grid lg:grid-cols-4">
+      {
+        testimonials.map((t) => (
+          <article class="flex flex-col items-center gap-5">
+            <button
+              type="button"
+              class="group relative w-full overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-[1.02]"
+              aria-label={`Reproducir ${t.alt}`}
+            >
+              <img
+                src={t.image}
+                alt={t.alt}
+                class="aspect-[861/1486] w-full object-cover"
+                loading="lazy"
+              />
+              <span
+                class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform group-hover:scale-105"
+                aria-hidden="true"
+              >
+                <img
+                  src="/images/sections/03-video-stats/play-overlay.svg"
+                  alt=""
+                  class="h-8 w-8 object-contain"
+                />
+              </span>
+            </button>
+
+            <div class="text-center font-epilogue uppercase">
+              <p class="text-base font-medium tracking-[0.12em] text-probusiness-naranja">
+                Caso de éxito
+              </p>
+              <p class="mt-2 text-[1.75rem] font-semibold leading-[1.05] tracking-[-0.04em] text-black">
+                {t.title.map((line) => (
+                  <>
+                    {line}
+                    <br />
+                  </>
+                ))}
+              </p>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
+
+<style>
+  .testimonials-heading {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .testimonials-carousel {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    .testimonials-carousel {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 11%;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin-inline: calc(-1 * clamp(1rem, 5vw, 5rem));
+      padding-inline: 11%;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .testimonials-carousel[data-ready='true'] {
+      opacity: 1;
+    }
+
+    .testimonials-carousel::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .testimonials-carousel__slide {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+  }
+
+  .testimonials-carousel__media {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .testimonials-carousel__thumb {
+    display: block;
+    aspect-ratio: 861 / 1486;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .testimonials-carousel__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .testimonials-carousel__play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 9999px;
+    background: var(--color-probusiness-naranja);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .testimonials-carousel__play-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+  }
+
+  .testimonials-carousel__copy {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: var(--font-epilogue);
+    text-transform: uppercase;
+  }
+
+  .testimonials-carousel__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-probusiness-naranja);
+  }
+
+  .testimonials-carousel__title {
+    margin-top: 0.5rem;
+    font-size: clamp(1.125rem, 4.5vw, 1.375rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #000;
+  }
+</style>
+
+<script>
+  /** @param {HTMLElement} carousel */
+  function centerTestimonialsCarousel(carousel) {
+    if (window.matchMedia('(min-width: 1024px)').matches) return false;
+
+    const slides = carousel.querySelectorAll('.testimonials-carousel__slide');
+    const initialIndex = Number(carousel.dataset.initialIndex ?? '1');
+    const slide = slides[initialIndex];
+    if (!slide || slide.offsetWidth === 0) return false;
+
+    const carouselRect = carousel.getBoundingClientRect();
+    const slideRect = slide.getBoundingClientRect();
+    const targetScroll =
+      carousel.scrollLeft +
+      (slideRect.left - carouselRect.left) -
+      (carouselRect.width - slideRect.width) / 2;
+
+    carousel.scrollLeft = Math.max(0, targetScroll);
+    carousel.dataset.ready = 'true';
+    return true;
+  }
+
+  function initTestimonialsCarousel() {
+    document.querySelectorAll('.testimonials-carousel').forEach((carousel) => {
+      carousel.removeAttribute('data-ready');
+
+      const center = () => centerTestimonialsCarousel(carousel);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(center);
+      });
+
+      window.addEventListener('load', center, { once: true });
+
+      carousel.querySelectorAll('img').forEach((img) => {
+        if (img.complete) return;
+        img.addEventListener('load', center, { once: true });
+      });
+
+      const resizeObserver = new ResizeObserver(() => {
+        if (carousel.dataset.ready !== 'true') center();
+      });
+
+      resizeObserver.observe(carousel);
+      setTimeout(() => resizeObserver.disconnect(), 1500);
+    });
+  }
+
+  initTestimonialsCarousel();
+  document.addEventListener('astro:page-load', initTestimonialsCarousel);
+</script>

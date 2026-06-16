@@ -5,41 +5,200 @@ const footerStats = [
 ];
 ---
 
-<footer class="border-t border-white/10 bg-black py-12 lg:py-16">
-  <div class="site-container">
-    <div class="mb-10 flex justify-center lg:mb-12">
-      <a href="#inicio" aria-label="ProBusiness — Inicio">
+<footer class="footer">
+  <div class="site-container footer__inner">
+    <a href="#inicio" class="footer-brand" aria-label="ProBusiness — Inicio">
+      <img
+        src="/images/sections/14-footer/logo-large.png"
+        alt="probusiness"
+        class="footer-brand__logo"
+        loading="lazy"
+      />
+    </a>
+
+    <div class="footer-stats">
+      <div class="footer-stat">
         <img
-          src="/images/sections/14-footer/logo-large.png"
-          alt="probusiness"
-          class="h-24 w-auto object-contain lg:h-32 xl:h-40"
-          width="782"
-          height="460"
+          src="/images/sections/14-footer/logo-ccl.png"
+          alt="CCL"
+          class="footer-stat__logo footer-stat__logo--ccl"
+          loading="lazy"
         />
-      </a>
-    </div>
-
-    <div class="mb-10 grid gap-8 sm:grid-cols-2 lg:mb-12 lg:grid-cols-4 lg:gap-10">
-      <div class="flex flex-col items-center text-center">
-        <img src="/images/sections/14-footer/logo-ccl.png" alt="CCL" class="mb-4 h-12 w-auto object-contain lg:h-14" loading="lazy" />
-        <p class="font-epilogue text-sm font-medium text-white/80">Respaldado por la CCL</p>
+        <p class="footer-stat__label">Respaldado por la CCL</p>
       </div>
 
-      <div class="flex flex-col items-center text-center">
-        <img src="/images/sections/14-footer/icon-china.svg" alt="" class="mb-4 h-14 w-14 object-contain lg:h-16 lg:w-16" aria-hidden="true" />
-        <p class="font-epilogue text-sm font-medium text-white/80">Sede propia en China</p>
+      <div class="footer-stat">
+        <img
+          src="/images/sections/14-footer/icon-china.svg"
+          alt=""
+          class="footer-stat__logo footer-stat__logo--china"
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <p class="footer-stat__label">Sede propia en China</p>
       </div>
 
-      {footerStats.map((stat) => (
-        <div class="text-center">
-          <p class="font-sora text-3xl font-bold text-probusiness-naranja lg:text-4xl xl:text-5xl">{stat.value}</p>
-          <p class="mt-2 font-epilogue text-sm text-white/60">{stat.label}</p>
-        </div>
-      ))}
+      {
+        footerStats.map((stat) => (
+          <div class="footer-stat">
+            <p class="footer-stat__value">{stat.value}</p>
+            <p class="footer-stat__label">{stat.label}</p>
+          </div>
+        ))
+      }
     </div>
-
-    <div class="border-t border-white/10 pt-6 text-center lg:pt-8">
-      <p class="font-epilogue text-sm text-white/50">2026, probusiness. Todos los derechos reservados</p>
-    </div>
+ 
+    <p class="footer-copy block text-center">2026, probusiness. Todos los derechos reservados</p>
   </div>
 </footer>
+
+<style>
+  .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #000;
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'stats stats'
+      'brand copy';
+    gap: clamp(1.75rem, 6vw, 2.5rem) clamp(1rem, 4vw, 1.5rem);
+    padding-block: clamp(2rem, 6vw, 3rem);
+  }
+  .footer-brand {
+    grid-area: brand;
+    align-self: end;
+    flex-shrink: 0;
+  }
+
+  .footer-brand__logo {
+    height: clamp(3.25rem, 14vw, 4rem);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .footer-stats {
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.75rem, 6vw, 2.5rem) clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .footer-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 0.65rem;
+  }
+
+  .footer-stat__logo {
+    object-fit: contain;
+  }
+
+  .footer-stat__logo--ccl {
+    height: clamp(2rem, 7vw, 2.5rem);
+    width: auto;
+  }
+
+  .footer-stat__logo--china {
+    height: clamp(1.75rem, 5.5vw, 2.25rem);
+    width: clamp(1.75rem, 5.5vw, 2.25rem);
+  }
+
+  .footer-stat__value {
+    margin: 0;
+    font-family: var(--font-sora);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+
+  .footer-stat__label {
+    margin: 0;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.75rem, 3vw, 0.875rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-copy {
+    grid-area: copy;
+    align-self: end;
+    margin: 0;
+    max-width: 11rem;
+    text-align: right;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.625rem, 2.6vw, 0.75rem);
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (min-width: 1024px) {
+    .footer__inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        'brand stats'
+        'copy copy';
+      align-items: center;
+      gap: clamp(2rem, 4vw, 3rem) clamp(2rem, 6vw, 5rem);
+      padding-block: clamp(3rem, 5vw, 4.5rem) clamp(2rem, 3vw, 2.5rem);
+    }
+
+    .footer-brand {
+      align-self: center;
+      justify-self: start;
+    }
+
+    .footer-brand__logo {
+      height: clamp(5.5rem, 8vw, 7.5rem);
+    }
+
+    .footer-stats {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: clamp(2.5rem, 5vw, 5rem);
+    }
+
+    .footer-stat {
+      flex: 0 0 auto;
+      min-width: clamp(7rem, 10vw, 11rem);
+    }
+
+    .footer-stat__logo--ccl {
+      height: clamp(2.5rem, 3vw, 3.25rem);
+    }
+
+    .footer-stat__logo--china {
+      height: clamp(2.75rem, 3.5vw, 3.75rem);
+      width: clamp(2.75rem, 3.5vw, 3.75rem);
+    }
+
+    .footer-stat__value {
+      font-size: clamp(2.25rem, 3.2vw, 3.25rem);
+    }
+
+    .footer-stat__label {
+      font-size: clamp(0.8125rem, 1vw, 1rem);
+    }
+
+    .footer-copy {
+      justify-self: center;
+      align-self: center;
+      max-width: none;
+      margin-top: clamp(1.5rem, 3vw, 2.5rem);
+      text-align: center;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+</style>

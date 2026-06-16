@@ -1,134 +1,1331 @@
----
-const temario = [
-  'Búsqueda de productos rentables',
-  'Proveedores confiables en China',
-  'Negociación con proveedores',
-  'Cálculo de costos de importación',
-  'Logística internacional',
-  'Trámites aduaneros',
-  'Carga consolidada y envíos',
-  'Formas de pago internacionales',
-  'Proceso completo de importación',
-  'Estrategias para iniciar tu negocio importador',
-];
----
+<section id="planes" class="pricing-section relative overflow-hidden bg-black">
+  <div class="pricing-hero-bg pointer-events-none absolute inset-x-0 top-0">
+    <img src="/images/sections/09-pricing/bg.png" alt="" aria-hidden="true" />
+    <div class="pricing-hero-fade absolute inset-0" aria-hidden="true"></div>
+  </div>
+  <div class="pricing-hero-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" aria-hidden="true"></div>
 
-<section id="planes" class="site-section relative">
-  <div class="site-container">
-    <h2 class="mb-8 text-center font-sora text-lg font-semibold tracking-[0.25em] text-white/80 uppercase lg:mb-12 lg:text-2xl">
-      Temario del Curso
-    </h2>
+  <img
+    src="/images/sections/09-pricing/box-desktop.png"
+    alt=""
+    class="pointer-events-none absolute right-[0%] top-[4%] z-20 hidden w-[min(28vw,340px)] object-contain lg:block xl:w-[380px]"
+    aria-hidden="true"
+    loading="lazy"
+  />
 
-    <div class="relative mx-auto max-w-5xl">
-      <div class="grid gap-6 lg:grid-cols-[1fr_0.72fr] lg:items-start lg:gap-8">
-        <div class="card-glow relative z-10 overflow-hidden rounded-[20px] bg-probusiness-naranja">
-          <div class="flex h-14 items-center justify-center gap-2 bg-probusiness-orange-header lg:h-16">
-            <svg class="h-5 w-5 text-white lg:h-6 lg:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-epilogue text-sm font-semibold tracking-widest text-white uppercase lg:text-base">Ahora</span>
-          </div>
+  <img
+    src="/images/sections/09-pricing/box-mobile.png"
+    alt=""
+    class="pricing-box-mobile pointer-events-none absolute z-20 lg:hidden"
+    aria-hidden="true"
+    loading="lazy"
+  />
 
-          <div class="p-6 lg:p-8">
-            <p class="mb-2 font-sora text-xs font-medium tracking-widest text-white uppercase lg:text-sm">Conviértete en un</p>
-            <h3 class="font-sora text-3xl font-bold text-white lg:text-4xl xl:text-5xl">Importador</h3>
-            <div class="mb-6 flex flex-wrap items-center gap-3">
-              <h3 class="font-sora text-3xl font-bold text-black lg:text-4xl xl:text-5xl">Certificado</h3>
-              <span class="rounded-2xl bg-black px-3 py-1 font-sora text-lg font-semibold text-gradient-pro lg:px-4 lg:text-2xl">PRO</span>
-            </div>
+  <div class="site-container relative z-10 pt-[min(22vw,300px)] pb-16 lg:pb-20">
+    <div class="pricing-cards pricing-cards--desktop mx-auto hidden max-w-[920px] lg:block">
+      <div class="pricing-card pricing-card--antes">
+        <div class="pricing-card__badge pricing-card__badge--muted">
+          <span aria-hidden="true">↘</span>
+          <span>Antes</span>
+        </div>
 
-            <div class="mb-8 flex items-start gap-1">
-              <span class="font-sora text-xl font-bold text-white lg:text-2xl">S/</span>
-              <span class="font-sora text-6xl font-bold leading-none text-black lg:text-7xl xl:text-8xl">550</span>
-              <span class="font-sora text-2xl font-bold text-white lg:text-3xl">,00</span>
-            </div>
-
-            <hr class="mb-6 border-white/30 lg:mb-8" />
-
-            <ol class="mb-8 space-y-2 font-epilogue text-sm text-white lg:space-y-3 lg:text-base">
-              {temario.map((item, i) => (
-                <li class="flex gap-3">
-                  <span class="font-semibold text-black">{i + 1}.</span>
-                  {item}
-                </li>
-              ))}
-            </ol>
-
-            <a
-              href="#contacto"
-              class="block w-full rounded-[36px] bg-white py-4 text-center font-epilogue text-lg font-bold text-probusiness-naranja transition-opacity hover:opacity-90 lg:text-xl"
+        <div class="pricing-card__body">
+          <p class="text-[#9C9C9C] text-2xl">CONVIÉRTETE EN UN</p>
+          <h3 class="pricing-card__title text-[#9C9C9C]">Importador</h3>
+          <div class="pricing-card__title-row pricing-card__title-row--muted">
+            <h3
+              class="pricing-card__title pricing-card__title--muted text-[#656565]"
             >
-              Quiero este plan
-            </a>
+              Certificado
+            </h3>
           </div>
-        </div>
 
-        <div class="relative overflow-hidden rounded-[20px] bg-[#2c2c2c] lg:mt-16 xl:mt-20">
-          <div class="flex h-14 items-center justify-center gap-2 bg-[#1c1c1c] lg:h-16">
-            <svg class="h-5 w-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-epilogue text-sm font-semibold tracking-widest text-white/50 uppercase lg:text-base">Antes</span>
+          <div class="pricing-card__price pricing-card__price--muted">
+            <span class="pricing-card__currency">S/</span>
+            <span class="text-6xl text-[#9C9C9C]">950</span>
+            <span class="pricing-card__cents">,00</span>
           </div>
-          <div class="p-6 lg:p-8">
-            <p class="mb-2 font-sora text-xs font-medium tracking-widest text-zinc-500 uppercase lg:text-sm">Conviértete en un</p>
-            <h3 class="font-sora text-2xl font-bold text-zinc-500 lg:text-3xl xl:text-4xl">Importador</h3>
-            <h3 class="mb-6 font-sora text-2xl font-bold text-zinc-600 lg:text-3xl xl:text-4xl">Certificado</h3>
-            <div class="mb-4 flex items-start gap-1">
-              <span class="font-sora text-lg font-bold text-zinc-500 lg:text-xl">S/</span>
-              <span class="font-sora text-4xl font-bold text-zinc-500 line-through lg:text-5xl xl:text-6xl">950</span>
-              <span class="font-sora text-xl font-bold text-zinc-500 lg:text-2xl">,00</span>
-            </div>
-            <p class="font-epilogue text-sm text-zinc-500 lg:text-base">Precio sin descuento</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          <p class="pricing-card__note text-[#656565] text-2xl mx-auto ml-5">
+            Precio sin <br /> descuento
+          </p>
 
-    <div class="relative mx-auto mt-12 max-w-4xl text-center lg:mt-16">
-      <p class="mb-6 inline-block rounded-[20px] bg-probusiness-naranja px-5 py-3 font-epilogue text-sm font-bold uppercase tracking-wide text-white lg:px-8 lg:py-4 lg:text-xl">
-        Promoción por tiempo limitado
-      </p>
-
-      <p class="mb-6 font-sora text-lg font-medium text-white lg:mb-8 lg:text-2xl xl:text-3xl">
-        Obtén un descuento adicional usando el código:
-      </p>
-
-      <div class="relative inline-flex flex-wrap items-center justify-center gap-4">
-        <img
-          src="/images/sections/09-pricing/mascota.png"
-          alt=""
-          class="pointer-events-none absolute -left-12 -top-6 hidden h-28 w-28 object-contain lg:block xl:-left-20 xl:h-36 xl:w-36"
-          aria-hidden="true"
-          loading="lazy"
-        />
-        <div class="inline-flex items-center gap-3 rounded-[20px] border-2 border-probusiness-naranja bg-zinc-900 px-5 py-3 lg:gap-4 lg:px-8 lg:py-4">
-          <span class="font-sora text-2xl font-bold text-gradient-pro lg:text-4xl xl:text-5xl">CURSOPRO</span>
           <button
-            id="copy-code"
             type="button"
-            class="inline-flex items-center gap-2 rounded-xl bg-probusiness-naranja px-4 py-2 font-epilogue text-sm font-bold text-white transition-opacity hover:opacity-90"
+            class="bg-[#1A1A1A] text-[#656565] text-2xl px-2 py-[5px] rounded-[10px] font-semibold w-[80%] mx-auto text-center block"
+            disabled
           >
-            <img id="copy-icon" src="/images/sections/09-pricing/icon-copy.svg" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
-            <span id="copy-label">COPIAR</span>
+            Quiero este plan
           </button>
         </div>
       </div>
 
-      <p class="mt-6 font-sora text-base font-semibold text-probusiness-naranja lg:mt-8 lg:text-xl">*CUPOS LIMITADOS</p>
+      <div class="pricing-card pricing-card--ahora">
+        <div class="pricing-card__badge">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 61 61"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_446_181)">
+              <path
+                d="M59.8153 59.7438C60.6603 58.9038 61 57.8893 61 56.7064L61 15.5822C61 13.1407 59.2625 10.9838 56.8209 10.9838L53.0694 10.9838C50.6279 10.9838 48.3495 13.1407 48.3495 15.5822L48.3495 39.7643L10.0692 1.3378C9.23549 0.504767 8.19688 0.0455548 7.0109 0.0449222C5.82492 0.0449221 4.75026 0.504767 3.91659 1.3378L1.28339 3.99061C0.449726 4.82301 3.55723e-06 5.93499 3.50539e-06 7.12097C3.45355e-06 8.30695 0.463012 9.29812 1.29668 10.1312L39.5916 48.3027L15.6942 48.3027C13.252 48.3027 11.0306 50.5298 11.0306 52.9708L11.0306 56.7235C11.0306 59.1638 13.252 60.9538 15.6942 60.9538L56.8064 60.9538C57.9879 60.9532 58.9778 60.5864 59.8153 59.7438Z"
+                fill="white"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_446_181">
+                <rect
+                  width="61"
+                  height="61"
+                  fill="white"
+                  transform="translate(61 2.66639e-06) rotate(90)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <span class="text-2xl font-semibold">Ahora</span>
+        </div>
+
+        <div class="pricing-card__body flex flex-col items-center">
+          <div class="pricing-card__content">
+            <p class="text-3xl font-normal">CONVIÉRTETE EN UN</p>
+            <h3 class="text-5xl font-bold">Importador</h3>
+            <div class="pricing-card__title-row">
+              <h3 class="text-5xl font-bold text-black">Certificado</h3>
+              <span class="pricing-card__pro text-gradient-pro">PRO</span>
+            </div>
+
+            <div
+              class="pricing-card__price flex items-center gap-1 mx-auto justify-center"
+            >
+              <span
+                class="pricing-card__amount pricing-card__amount--dark relative"
+              >
+                <span class="text-white text-4xl absolute bottom-0 left-[-40px]"
+                  >S/</span
+                >
+                <span class="text-12xl">550</span>
+                <span class="text-white text-4xl absolute top-0 right-[-70px]"
+                  >,00</span
+                >
+              </span>
+            </div>
+
+            <hr class="pricing-card__divider" />
+
+            <ol class="pricing-card__list">
+              <span class="text-white text-3xl font-semibold"
+                >Temario del Curso</span
+              >
+              <li class="text-xl font-normal">
+                <span>1.</span> Búsqueda de productos rentables
+              </li>
+              <li class="text-xl font-normal">
+                <span>2.</span> Proveedores confiables en China
+              </li>
+              <li class="text-xl font-normal">
+                <span>3.</span> Negociación con proveedores
+              </li>
+              <li class="text-xl font-normal">
+                <span>4.</span> Cálculo de costos de importación
+              </li>
+              <li class="text-xl font-normal">
+                <span>5.</span> Logística internacional
+              </li>
+              <li class="text-xl font-normal">
+                <span>6.</span> Trámites aduaneros
+              </li>
+              <li class="text-xl font-normal">
+                <span>7.</span> Carga consolidada y envíos
+              </li>
+              <li class="text-xl font-normal">
+                <span>8.</span> Formas de pago internacionales
+              </li>
+              <li class="text-xl font-normal">
+                <span>9.</span> Proceso completo de importación
+              </li>
+              <li class="text-xl font-normal">
+                <span>10.</span> Estrategias para iniciar tu negocio importador
+              </li>
+            </ol>
+
+            <a
+              href="#contacto"
+              class="bg-white text-[#FF5410] text-4xl px-2 py-[16px] rounded-[10px] font-semibold w-[80%] mx-auto text-center block"
+              >Quiero este plan</a
+            >
+          </div>
+          <div class="pricing-card__fade" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-cards pricing-cards--mobile mx-auto lg:hidden">
+      <div class="pricing-card pricing-card--antes">
+        <div class="pricing-card__badge pricing-card__badge--muted">
+          <span aria-hidden="true">↘</span>
+          <span>Antes</span>
+        </div>
+
+        <div class="pricing-card__body pricing-card__body--antes">
+          <p class="pricing-card__lead pricing-card__lead--muted">CONVIÉRTETE EN UN</p>
+          <h3 class="pricing-card__title pricing-card__title--muted">Importador</h3>
+          <div class="pricing-card__title-row pricing-card__title-row--muted">
+            <h3 class="pricing-card__title pricing-card__title--muted">Certificado</h3>
+          </div>
+
+          <div class="pricing-card__price pricing-card__price--muted">
+            <span class="pricing-card__currency">S/</span>
+            <span class="pricing-card__amount pricing-card__amount--muted">950</span>
+            <span class="pricing-card__cents">,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-card pricing-card--ahora">
+        <div class="pricing-card__badge">
+          <svg width="20" height="20" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g clip-path="url(#clip0_pricing_mobile)">
+              <path
+                d="M59.8153 59.7438C60.6603 58.9038 61 57.8893 61 56.7064L61 15.5822C61 13.1407 59.2625 10.9838 56.8209 10.9838L53.0694 10.9838C50.6279 10.9838 48.3495 13.1407 48.3495 15.5822L48.3495 39.7643L10.0692 1.3378C9.23549 0.504767 8.19688 0.0455548 7.0109 0.0449222C5.82492 0.0449221 4.75026 0.504767 3.91659 1.3378L1.28339 3.99061C0.449726 4.82301 3.55723e-06 5.93499 3.50539e-06 7.12097C3.45355e-06 8.30695 0.463012 9.29812 1.29668 10.1312L39.5916 48.3027L15.6942 48.3027C13.252 48.3027 11.0306 50.5298 11.0306 52.9708L11.0306 56.7235C11.0306 59.1638 13.252 60.9538 15.6942 60.9538L56.8064 60.9538C57.9879 60.9532 58.9778 60.5864 59.8153 59.7438Z"
+                fill="white"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_pricing_mobile">
+                <rect width="61" height="61" fill="white" transform="translate(61 0) rotate(90)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span>Ahora</span>
+        </div>
+
+        <div class="pricing-card__body">
+          <div class="pricing-card__content">
+            <p class="pricing-card__lead">CONVIÉRTETE EN UN</p>
+            <h3 class="pricing-card__title pricing-card__title--dark">Importador</h3>
+            <div class="pricing-card__title-row">
+              <h3 class="pricing-card__title pricing-card__title--dark">Certificado</h3>
+              <span class="pricing-card__pro">PRO</span>
+            </div>
+
+            <div class="pricing-card__price pricing-card__price--dark">
+              <span class="pricing-card__currency pricing-card__currency--dark">S/</span>
+              <span class="pricing-card__amount pricing-card__amount--dark">550</span>
+              <span class="pricing-card__cents pricing-card__cents--dark">,00</span>
+            </div>
+
+            <hr class="pricing-card__divider" />
+
+            <ol class="pricing-card__list">
+              <li class="pricing-card__list-heading">Temario del Curso</li>
+              <li><span>1.</span> Búsqueda de productos rentables</li>
+              <li><span>2.</span> Proveedores confiables en China</li>
+              <li><span>3.</span> Negociación con proveedores</li>
+              <li><span>4.</span> Cálculo de costos de importación</li>
+              <li><span>5.</span> Logística internacional</li>
+              <li><span>6.</span> Trámites aduaneros</li>
+              <li><span>7.</span> Carga consolidada y envíos</li>
+              <li><span>8.</span> Formas de pago internacionales</li>
+              <li><span>9.</span> Proceso completo de importación</li>
+              <li><span>10.</span> Estrategias para iniciar tu negocio importador</li>
+            </ol>
+
+            <a href="#contacto" class="pricing-card__cta">Quiero este plan</a>
+          </div>
+          <div class="pricing-card__fade" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-promo pricing-promo--desktop hidden lg:flex">
+      <div class="pricing-code">
+        <img
+          src="/images/sections/09-pricing/cohete.png"
+          alt=""
+          class="pricing-code__rocket"
+          aria-hidden="true"
+          loading="lazy"
+        />
+
+        <div class="flex flex-row">
+          <span class="text-white text-4xl font-semibold">
+            <span class="text-white text-5xl font-semibold">
+              Obtén un descuento adicional usando el código:
+              <span class="pricing-code__inline align-middle">
+                <div class="pricing-code__box">
+                  <span class="pricing-code__label">CURSOPRO</span>
+                </div>
+                <button
+                  id="copy-code"
+                  type="button"
+                  class=""
+                  aria-label="Copiar código CURSOPRO"
+                >
+                  <div class="flex flex-col items-center gap-2">
+                    <img
+                      src="/images/sections/09-pricing/icon-copy.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                      aria-hidden="true"
+                    />
+                    <span id="copy-label" class="text-white text-sm font-semibold">COPIAR</span>
+                  </div>
+                </button>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <p
+        class="bg-[#FF5410] text-white text-4xl w-[50%] mt-5 mb-5 mx-auto font-semibold py-2 rounded-[10px] text-center"
+      >
+        PROMOCIÓN POR TIEMPO LIMITADO
+      </p>
+
+      <div class="pricing-countdown-block mx-auto mt-[80px]">
+        <div class="pricing-countdown">
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="days">02</p>
+            <p class="pricing-countdown__label">DÍAS</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="hours">15</p>
+            <p class="pricing-countdown__label">HORAS</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="minutes">37</p>
+            <p class="pricing-countdown__label">MIN</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="seconds">28</p>
+            <p class="pricing-countdown__label">SEG</p>
+          </div>
+        </div>
+
+        <p class="text-white text-4xl font-semibold">*CUPOS LIMITADOS</p>
+      </div>
+    </div>
+
+    <div class="pricing-promo pricing-promo--mobile lg:hidden">
+      <div class="pricing-code">
+        <img
+          src="/images/sections/09-pricing/cohete.png"
+          alt=""
+          class="pricing-code__rocket"
+          aria-hidden="true"
+          loading="lazy"
+        />
+
+        <div class="pricing-code__main">
+          <p class="pricing-code__text">
+            <span class="pricing-code__line">Obtén un descuento adicional</span>
+            <span class="pricing-code__line">usando el código:</span>
+          </p>
+
+          <div class="pricing-code__inline">
+            <div class="pricing-code__box">
+              <span class="pricing-code__label">CURSOPRO</span>
+            </div>
+            <button
+              id="copy-code-mobile"
+              type="button"
+              class="pricing-code__copy"
+              aria-label="Copiar código CURSOPRO"
+            >
+              <img
+                src="/images/sections/09-pricing/icon-copy.svg"
+                alt=""
+                class="pricing-code__copy-icon"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              />
+              <span id="copy-label-mobile">COPIAR</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-promo__badge">Promoción por tiempo limitado</p>
+
+      <div class="pricing-countdown-block">
+        <div class="pricing-countdown">
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="days">02</p>
+            <p class="pricing-countdown__label">DÍAS</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="hours">15</p>
+            <p class="pricing-countdown__label">HORAS</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="minutes">37</p>
+            <p class="pricing-countdown__label">MIN</p>
+          </div>
+          <div class="pricing-countdown__unit">
+            <p class="pricing-countdown__value" data-unit="seconds">28</p>
+            <p class="pricing-countdown__label">SEG</p>
+          </div>
+        </div>
+
+        <p class="pricing-countdown__footer">*CUPOS LIMITADOS</p>
+      </div>
     </div>
   </div>
 </section>
 
+<style>
+  .pricing-hero-bg {
+    /* Franja visible: 20%–80% de la imagen (60% de altura Figma ≈ 1181px @ 3973px) */
+    height: min(29.7vw, 1181px);
+    overflow: hidden;
+  }
+
+  .pricing-hero-bg img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100% / 0.6);
+    top: calc(-100% / 3);
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .pricing-hero-fade {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.89) 26.75%,
+      rgba(0, 0, 0, 0.98) 50.43%,
+      rgba(0, 0, 0, 0.93) 72.22%,
+      #000 100%
+    );
+  }
+
+  .pricing-hero-fade-top {
+    height: min(29.7vw, 1181px);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.72) 45%,
+      #000 100%
+    );
+  }
+
+  .pricing-cards {
+    position: relative;
+  }
+
+  .pricing-cards--desktop {
+    min-height: 620px;
+  }
+
+  .pricing-card {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .pricing-card--ahora {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 550px);
+    background: #ff6a29;
+  }
+
+  .pricing-card__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.25rem;
+    background: #ee4815;
+    font-family: var(--font-epilogue);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .pricing-card__badge--muted {
+    background: #1c1c1c;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .pricing-card__cta--muted {
+    border-radius: 999px;
+    background: #3a3a3a;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: not-allowed;
+  }
+
+  .pricing-cards--desktop .pricing-card__body {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-cards--desktop .pricing-card--ahora .pricing-card__body {
+    padding: 0;
+  }
+
+  .pricing-cards--desktop .pricing-card__content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem 1.75rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-cards--desktop .pricing-card__content {
+      padding: 2rem 2.25rem 2.5rem;
+    }
+  }
+
+  .pricing-cards--desktop .pricing-card__fade {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 1;
+    height: 55%;
+    pointer-events: none;
+  }
+
+  .pricing-cards--desktop .pricing-card--antes {
+    position: absolute;
+    top: 2.5rem;
+    right: 80px;
+    z-index: 1;
+    width: min(78%, 350px);
+    background: rgba(40, 40, 40, 0.95);
+  }
+
+  .pricing-cards--desktop .pricing-card__body {
+    padding: 1.5rem 1.75rem 2rem;
+  }
+
+  .pricing-cards--desktop .pricing-card--ahora .pricing-card__body {
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-cards--desktop .pricing-card__body {
+      padding: 2rem 2.25rem 2.5rem;
+    }
+
+    .pricing-cards--desktop .pricing-card--ahora .pricing-card__body {
+      padding: 0;
+    }
+  }
+
+  .pricing-card__eyebrow {
+    margin-bottom: 0.35rem;
+    font-family: var(--font-sora);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .pricing-card__eyebrow--muted {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card__title {
+    font-family: var(--font-sora);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .pricing-card__title--muted {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card__title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pricing-card__title-row--muted {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-card__pro {
+    border-radius: 8px;
+    background: #000;
+    padding: 0.05rem 0.4rem;
+    font-family: var(--font-sora);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: #ff5410;
+    font-size: 2.05rem;
+  }
+
+  .pricing-card__pro--muted {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card__price {
+    display: flex;
+
+    gap: 0.15rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-sora);
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .pricing-card__price--muted {
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card__currency {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .pricing-card__currency--dark {
+    color: #000;
+  }
+
+  .pricing-card__amount {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 0.9;
+  }
+
+  .pricing-card__amount--dark {
+    color: #000;
+  }
+
+  .pricing-card__cents {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .pricing-card__cents--dark {
+    color: #000;
+  }
+
+  .pricing-card__note {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-epilogue);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card__divider {
+    margin-bottom: 1.25rem;
+    border: 0;
+    border-top: 2px dotted rgba(255, 255, 255, 0.55);
+  }
+
+  .pricing-card__list {
+    margin-bottom: 1.75rem;
+    display: grid;
+    gap: 0.45rem;
+    font-family: var(--font-epilogue);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    color: #fff;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 72%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-card__list {
+      font-size: 0.95rem;
+      gap: 0.55rem;
+    }
+  }
+
+  .pricing-card__list li {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .pricing-card__list span {
+    color: white;
+  }
+
+  .pricing-card__cta {
+    display: block;
+    width: 100%;
+    border-radius: 999px;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-family: var(--font-epilogue);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ff6a29;
+    transition: opacity 0.2s ease;
+  }
+
+  .pricing-card__cta:hover {
+    opacity: 0.92;
+  }
+
+  .pricing-card__cta--muted {
+    border-radius: 999px;
+    background: #3a3a3a;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: not-allowed;
+  }
+
+  .pricing-cards--desktop {
+    display: none;
+    min-height: 620px;
+  }
+
+  .pricing-promo--desktop {
+    display: none;
+  }
+
+  .pricing-promo--mobile {
+    display: none;
+  }
+
+  .pricing-code {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    width: 100%;
+    max-width: 62rem;
+  }
+
+  .pricing-code__rocket {
+    width: clamp(96px, 9vw, 155px);
+    height: auto;
+    flex-shrink: 0;
+    transform: rotate(16.39deg);
+    object-fit: contain;
+  }
+
+  .pricing-code__main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.5rem, 1vw, 0.875rem);
+    min-width: 0;
+  }
+
+  .pricing-code__text {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-epilogue);
+    font-size: clamp(1.0625rem, 1.35vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  .pricing-code__line {
+    display: block;
+  }
+
+  .pricing-code__inline {
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.875rem);
+  }
+
+  .pricing-code__box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0.4rem 1.125rem;
+    border: 4px solid #ff5410;
+    border-radius: 14px;
+    background: #000;
+    box-shadow: 0 4px 24px rgba(255, 84, 16, 0.35);
+  }
+
+  .pricing-code__label {
+    font-family: var(--font-epilogue);
+    font-size: clamp(1.375rem, 1.85vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+    background: linear-gradient(
+      90deg,
+      #ff5410 0%,
+      #ffae8e 49.52%,
+      #ff5410 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .pricing-code__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    padding: 0.15rem;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .pricing-code__copy:hover {
+    opacity: 0.85;
+  }
+
+  .pricing-code__copy-icon {
+    width: clamp(26px, 2.2vw, 36px);
+    height: clamp(26px, 2.2vw, 36px);
+  }
+
+  .pricing-code__copy span {
+    font-family: var(--font-sora);
+    font-size: clamp(0.5625rem, 0.75vw, 0.75rem);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .pricing-promo__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 62rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #da4307;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ff540a 0%, #ff6a29 100%);
+    font-family: var(--font-epilogue);
+    font-size: clamp(1.125rem, 1.1vw, 1.125rem);
+    font-weight: 600;
+    line-height: 1.26;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .pricing-countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 62rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .pricing-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    width: 100%;
+  }
+
+  .pricing-countdown__unit {
+    display: flex;
+    padding: 2em 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    border: none;
+    border-radius: 5px;
+    background-color: #282828;
+    text-align: center;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .pricing-countdown__value {
+    margin: 0;
+    font-family: var(--font-sora);
+    font-size: clamp(3.75rem, 7.2vw, 10.75rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #fff;
+    text-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  }
+
+  .pricing-countdown__label {
+    margin: 0;
+    font-family: var(--font-sora);
+    font-size: clamp(1.5625rem, 0.9vw, 2.8125rem);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .pricing-countdown__footer {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.9375rem, 1.15vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+
+  @media (max-width: 1023px) {
+    #planes > .site-container {
+      padding-top: clamp(5rem, 20vw, 7.5rem);
+    }
+
+    .pricing-hero-bg {
+      height: clamp(64px, 17vw, 96px);
+    }
+
+    .pricing-hero-fade-top {
+      height: clamp(64px, 17vw, 96px);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.5) 38%,
+        #000 100%
+      );
+    }
+
+    .pricing-hero-fade {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.75) 35%,
+        #000 100%
+      );
+    }
+
+    .pricing-hero-bg img {
+      height: 155%;
+      top: -18%;
+    }
+
+    .pricing-box-mobile {
+      right: -2%;
+      top: clamp(3.25rem, 13vw, 5.5rem);
+      width: min(42vw, 175px);
+      z-index: 15;
+      object-fit: contain;
+    }
+
+    .pricing-promo--mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: clamp(2rem, 5vw, 3rem);
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+    }
+
+    .pricing-cards--mobile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 24rem;
+      min-height: auto;
+      margin-top: 0.25rem;
+    }
+
+    .pricing-cards--mobile .pricing-card {
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .pricing-cards--mobile .pricing-card--antes {
+      position: relative;
+      top: auto;
+      right: auto;
+      z-index: 1;
+      width: min(86%, 19.5rem);
+      margin-bottom: -4.5rem;
+      background: rgba(40, 40, 40, 0.95);
+    }
+
+    .pricing-cards--mobile .pricing-card--ahora {
+      position: relative;
+      z-index: 2;
+      width: min(94%, 21.5rem);
+      background: #ff6a29;
+    }
+
+    .pricing-cards--mobile .pricing-card__badge {
+      min-height: 2.35rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+    }
+
+    .pricing-cards--mobile .pricing-card__badge svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .pricing-cards--mobile .pricing-card__body--antes {
+      padding: 0.75rem 0.875rem 3.5rem;
+      text-align: center;
+    }
+
+    .pricing-cards--mobile .pricing-card__body {
+      padding: 0;
+    }
+
+    .pricing-cards--mobile .pricing-card__content {
+      position: relative;
+      z-index: 2;
+      padding: 1rem 0.875rem 1.25rem;
+      text-align: center;
+    }
+
+    .pricing-cards--mobile .pricing-card__lead {
+      margin: 0 0 0.15rem;
+      font-family: var(--font-sora);
+      font-size: clamp(0.5625rem, 2.4vw, 0.6875rem);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .pricing-cards--mobile .pricing-card__lead--muted {
+      color: #9c9c9c;
+    }
+
+    .pricing-cards--mobile .pricing-card__title {
+      margin: 0;
+      font-family: var(--font-sora);
+      font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .pricing-cards--mobile .pricing-card__title--muted {
+      color: #656565;
+    }
+
+    .pricing-cards--mobile .pricing-card__title--dark {
+      color: #000;
+    }
+
+    .pricing-cards--mobile .pricing-card__title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .pricing-cards--mobile .pricing-card__title-row--muted {
+      margin-bottom: 0.55rem;
+    }
+
+    .pricing-cards--mobile .pricing-card__pro {
+      border-radius: 6px;
+      background: #000;
+      padding: 0.05rem 0.35rem;
+      font-family: var(--font-sora);
+      font-size: clamp(0.75rem, 3vw, 0.95rem);
+      font-weight: 600;
+      color: #ff5410;
+    }
+
+    .pricing-cards--mobile .pricing-card__price {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0.1rem;
+      margin: 0;
+      font-family: var(--font-sora);
+      font-weight: 700;
+    }
+
+    .pricing-cards--mobile .pricing-card__price--muted {
+      color: #9c9c9c;
+    }
+
+    .pricing-cards--mobile .pricing-card__price--dark {
+      margin-bottom: 0.75rem;
+      color: #000;
+    }
+
+    .pricing-cards--mobile .pricing-card__currency {
+      font-size: clamp(0.75rem, 3vw, 0.875rem);
+      line-height: 1.2;
+    }
+
+    .pricing-cards--mobile .pricing-card__amount {
+      font-size: clamp(2.35rem, 10vw, 2.85rem);
+      line-height: 0.9;
+    }
+
+    .pricing-cards--mobile .pricing-card__amount--muted {
+      color: #9c9c9c;
+    }
+
+    .pricing-cards--mobile .pricing-card__amount--dark {
+      color: #000;
+    }
+
+    .pricing-cards--mobile .pricing-card__cents {
+      font-size: clamp(0.75rem, 3vw, 0.875rem);
+      line-height: 1.2;
+    }
+
+    .pricing-cards--mobile .pricing-card__cents--dark {
+      color: #000;
+    }
+
+    .pricing-cards--mobile .pricing-card__divider {
+      margin-bottom: 0.65rem;
+      border: 0;
+      border-top: 2px dotted rgba(255, 255, 255, 0.55);
+    }
+
+    .pricing-cards--mobile .pricing-card__list {
+      margin: 0 0 1rem;
+      padding: 0;
+      display: grid;
+      gap: 0.28rem;
+      list-style: none;
+      font-family: var(--font-epilogue);
+      font-size: clamp(0.625rem, 2.6vw, 0.75rem);
+      line-height: 1.28;
+      color: #fff;
+      text-align: left;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .pricing-cards--mobile .pricing-card__list-heading {
+      margin-bottom: 0.25rem;
+      font-size: clamp(0.8125rem, 3.4vw, 0.9375rem);
+      font-weight: 600;
+      text-align: center;
+      list-style: none;
+    }
+
+    .pricing-cards--mobile .pricing-card__list li {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .pricing-cards--mobile .pricing-card__list span {
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .pricing-cards--mobile .pricing-card__cta {
+      display: block;
+      width: 88%;
+      margin-inline: auto;
+      border-radius: 10px;
+      background: #fff;
+      padding: 0.7rem 0.75rem;
+      text-align: center;
+      font-family: var(--font-epilogue);
+      font-size: clamp(0.95rem, 3.8vw, 1.125rem);
+      font-weight: 700;
+      color: #ff5410;
+    }
+
+    .pricing-cards--mobile .pricing-card__fade {
+      height: 45%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 106, 41, 0) 0%,
+        rgba(255, 106, 41, 0.85) 55%,
+        #ff6a29 100%
+      );
+    }
+
+    .pricing-promo--mobile .pricing-code {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .pricing-promo--mobile .pricing-code__rocket {
+      width: clamp(72px, 22vw, 110px);
+    }
+
+    .pricing-promo--mobile .pricing-code__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.875rem;
+      width: 100%;
+    }
+
+    .pricing-promo--mobile .pricing-code__text {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-epilogue);
+      font-size: clamp(1rem, 4vw, 1.75rem);
+      font-weight: 500;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-align: center;
+    }
+
+    .pricing-promo--mobile .pricing-code__line {
+      display: block;
+    }
+
+    .pricing-promo--mobile .pricing-code__inline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pricing-promo--mobile .pricing-code__box {
+      padding: 0.35rem 0.9rem;
+      border-width: 3px;
+      border-radius: 12px;
+    }
+
+    .pricing-promo--mobile .pricing-code__label {
+      font-size: clamp(1.25rem, 5vw, 2.25rem);
+    }
+
+    .pricing-promo--mobile .pricing-code__copy-icon {
+      width: clamp(22px, 6vw, 36px);
+      height: clamp(22px, 6vw, 36px);
+    }
+
+    .pricing-promo--mobile .pricing-code__copy span {
+      font-size: clamp(0.5625rem, 2.2vw, 0.75rem);
+    }
+
+    .pricing-promo--mobile .pricing-promo__badge {
+      width: min(100%, 22rem);
+      min-height: 2.75rem;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: clamp(0.95rem, 3.8vw, 1.125rem);
+      text-align: center;
+    }
+
+    .pricing-promo--mobile .pricing-countdown-block {
+      gap: clamp(0.85rem, 2vw, 1.5rem);
+    }
+
+    .pricing-promo--mobile .pricing-countdown {
+      gap: clamp(0.4rem, 1.5vw, 0.75rem);
+    }
+
+    .pricing-promo--mobile .pricing-countdown__unit {
+      padding: 1rem 0;
+      gap: 0.25rem;
+    }
+
+    .pricing-promo--mobile .pricing-countdown__value {
+      font-size: clamp(2rem, 9vw, 10.75rem);
+    }
+
+    .pricing-promo--mobile .pricing-countdown__label {
+      font-size: clamp(0.65rem, 2.8vw, 2.8125rem);
+    }
+
+    .pricing-promo--mobile .pricing-countdown__footer {
+      font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-cards--desktop {
+      display: block;
+    }
+
+    .pricing-promo--desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: clamp(2rem, 4vw, 3rem);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .pricing-cards--mobile,
+    .pricing-promo--mobile {
+      display: none;
+    }
+  }
+</style>
+
 <script>
-  document.getElementById('copy-code')?.addEventListener('click', async () => {
-    const label = document.getElementById('copy-label');
-    try {
-      await navigator.clipboard.writeText('CURSOPRO');
-      if (label) {
-        label.textContent = '¡Copiado!';
-        setTimeout(() => { label.textContent = 'COPIAR'; }, 2000);
+  async function bindCopyButton(buttonId, labelId) {
+    const button = document.getElementById(buttonId);
+    const label = document.getElementById(labelId);
+    if (!button) return;
+
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("CURSOPRO");
+        if (label) {
+          label.textContent = "¡Copiado!";
+          setTimeout(() => {
+            label.textContent = "COPIAR";
+          }, 2000);
+        }
+      } catch {
+        /* noop */
       }
-    } catch { /* noop */ }
-  });
+    });
+  }
+
+  bindCopyButton("copy-code", "copy-label");
+  bindCopyButton("copy-code-mobile", "copy-label-mobile");
+
+  const target = new Date();
+  target.setDate(target.getDate() + 2);
+  target.setHours(target.getHours() + 15);
+  target.setMinutes(37);
+  target.setSeconds(28);
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function tick() {
+    const diff = Math.max(0, target.getTime() - Date.now());
+    const s = Math.floor(diff / 1000);
+    const values = {
+      days: Math.floor(s / 86400),
+      hours: Math.floor((s % 86400) / 3600),
+      minutes: Math.floor((s % 3600) / 60),
+      seconds: s % 60,
+    };
+
+    document.querySelectorAll("[data-unit]").forEach((el) => {
+      const unit = el.getAttribute("data-unit");
+      if (unit) el.textContent = pad(values[unit] ?? 0);
+    });
+  }
+
+  tick();
+  setInterval(tick, 1000);
 </script>

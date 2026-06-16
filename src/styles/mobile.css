@@ -1,0 +1,10 @@
+/* Mobile only — Figma iPhone frame 195:378 (@2x ~882px lógico) */
+@media (max-width: 1023px) {
+  .site-container {
+    padding-inline: clamp(1rem, 4.5vw, 1.5rem);
+  }
+
+  .features-section {
+    margin-bottom: -5rem;
+  }
+}

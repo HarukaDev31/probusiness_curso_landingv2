@@ -1,11 +1,162 @@
-<section id="contenido" class="site-section relative overflow-hidden">
-  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-probusiness-naranja/8 via-transparent to-transparent"></div>
+<section id="contenido" class="features-section">
+  <div class="features-section__stage">
+    <img
+      src="/images/sections/04-features/puntillismo-mobile.png"
+      alt=""
+      class="features-section__bg features-section__bg--mobile"
+      loading="lazy"
+      aria-hidden="true"
+    />
+    <img
+      src="/images/sections/04-features/puntillismo.png"
+      alt=""
+      class="features-section__bg features-section__bg--desktop"
+      loading="lazy"
+      aria-hidden="true"
+    />
+    <div class="features-section__fade features-section__fade--top" aria-hidden="true"></div>
+    <div class="features-section__fade features-section__fade--bottom" aria-hidden="true"></div>
 
-  <div class="site-container relative">
-    <h2
-      class="mx-auto max-w-5xl text-center font-sora text-[clamp(1.35rem,2.8vw,2.25rem)] font-bold leading-[1.2] tracking-[-0.02em] text-white"
-    >
-      Con nuestro curso aprenderás paso a paso cómo importar de manera segura, rentable y sin errores
-    </h2>
+    <div class="site-container features-section__text">
+      <h2 class="features-section__title mx-auto max-w-6xl text-center font-sora font-bold text-white">
+        <span class="text-xl md:text-6xl">Con nuestro curso aprenderás</span>
+        <span class="text-xl md:text-6xl">paso a paso cómo importar</span>
+        <span class="text-xl md:text-6xl text-probusiness-naranja">
+          de manera segura, rentable y sin errores
+        </span>
+      </h2>
+    </div>
   </div>
 </section>
+
+<style>
+  .features-section {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+    background-color: #000;
+  }
+
+  .features-section__stage {
+    position: relative;
+    width: 100%;
+    height: clamp(480px, 118vw, 640px);
+    overflow: hidden;
+  }
+  @media (max-width: 480px) {
+    .features-section__stage {  
+      height: 480px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .features-section__stage {
+      height: 900px;
+    }
+  }
+  
+
+  .features-section__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .features-section__bg--mobile {
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .features-section__bg--desktop {
+    display: none;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @media (min-width: 1024px) {
+    .features-section__bg--mobile {
+      display: none;
+    }
+
+    .features-section__bg--desktop {
+      display: block;
+    }
+  }
+
+  .features-section__fade {
+    position: absolute;
+    inset-inline: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .features-section__fade--top {
+    top: 0;
+    height: 80%;
+    background: linear-gradient(
+      180deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.98) 36.7%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  @media (max-width: 480px) {
+    .features-section__fade--top {
+      height: 60%;
+    }
+  }
+
+  .features-section__fade--bottom {
+    bottom: 0;
+    height: 80%;
+    background: linear-gradient(
+      0deg,
+      #000 9.55%,
+      rgba(0, 0, 0, 0.98) 42.55%,
+      rgba(0, 0, 0, 0.81) 46.79%,
+      rgba(0, 0, 0, 0) 96.43%
+    );
+  }
+
+  .features-section__text {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .features-section__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .features-section__title-line {
+    display: block;
+    font-size: clamp(1.25rem, 4.6vw, 1.75rem);
+    font-weight: 700;
+  }
+
+  .features-section__title-line--accent {
+    font-size: clamp(1.3rem, 4.8vw, 1.85rem);
+    font-weight: 600;
+  }
+
+  @media (min-width: 1024px) {
+    .features-section__title-line {
+      font-size: 3.75rem;
+    }
+
+    .features-section__title-line--accent {
+      font-size: 3.75rem;
+    }
+  }
+</style>
