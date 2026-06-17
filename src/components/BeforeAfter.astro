@@ -52,7 +52,9 @@ import { asset } from '../lib/assets';
             <span class="before-after-card__line">Tu negocio no avanza.</span>
           </li>
         </ul>
-        <ResponsiveImage src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+        <div class="before-after-card__photo-wrap">
+          <ResponsiveImage src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+        </div>
       </div>
 
       <div class="before-after-card before-after-card--despues rounded-r-lg bg-white lg:rounded-r-xl lg:rounded-bl-none lg:px-10 lg:pt-10">
@@ -101,7 +103,9 @@ import { asset } from '../lib/assets';
             </span>
           </li>
         </ul>
-        <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+        <div class="before-after-card__photo-wrap">
+          <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -181,11 +185,26 @@ import { asset } from '../lib/assets';
     padding-bottom: 0;
   }
 
-  .before-after-card__photo {
+  .before-after-card__photo-wrap {
     margin-top: auto;
-    margin-bottom: 0;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .before-after-card__photo-wrap :global(picture),
+  .before-after-card__photo-wrap :global(.before-after-card__photo) {
     display: block;
     width: 100%;
+  }
+
+  .before-after-card__photo,
+  .before-after-card__photo-wrap :global(.before-after-card__photo) {
+    margin: 0;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    vertical-align: bottom;
   }
 
   .before-after-card__item strong {
@@ -238,8 +257,13 @@ import { asset } from '../lib/assets';
       text-align: left;
     }
 
-    .before-after-card__photo {
+    .before-after-card__photo-wrap {
       margin-top: auto;
+    }
+
+    .before-after-card__photo,
+    .before-after-card__photo-wrap :global(.before-after-card__photo) {
+      object-position: bottom center;
     }
 
     .before-after-card--despues .before-after-card__item {

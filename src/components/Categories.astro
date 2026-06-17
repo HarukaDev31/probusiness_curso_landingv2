@@ -50,8 +50,8 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
         <ResponsiveImage src={cat('8.png')} alt="Importadora con calzado" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
-      <div class="cat-cell cat-cell--vehiculos flex justify-end">
-        <ResponsiveImage src={cat('9.png')} alt="" class="cat-arrow  w-[90%]" sizes="40vw" aria-hidden="true" responsive={false} />
+      <div class="cat-cell cat-cell--vehiculos">
+        <ResponsiveImage src={cat('9.png')} alt="" class="cat-arrow cat-arrow--vehiculos" sizes="40vw" aria-hidden="true" responsive={false} />
         <p class="cat-label">Vehículos</p>
       </div>
 
@@ -130,11 +130,31 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     container-type: size;
   }
 
-  .cat-photo {
+  .cat-cell :global(picture:has(.cat-photo)) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cat-photo,
+  .cat-cell :global(.cat-photo) {
     display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  .cat-cell :global(picture:has(.cat-arrow)) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cat-cell :global(.cat-arrow) {
+    max-width: none;
+    object-fit: contain;
   }
 
   .cat-label {
@@ -161,7 +181,8 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     text-align: right;
   }
 
-  .cat-arrow {
+  .cat-arrow,
+  .cat-cell :global(.cat-arrow) {
     position: absolute;
     z-index: 1;
     pointer-events: none;
@@ -174,10 +195,9 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     background: #ff5410;
   }
 
-  .cat-arrow--tecnologia {
-  
+  .cat-arrow--tecnologia,
+  .cat-cell :global(.cat-arrow--tecnologia) {
     width: 95%;
-   
     opacity: 0.35;
   }
 
@@ -186,9 +206,11 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     background: #000;
   }
 
-  .cat-arrow--vehiculos {
-    
-    width: 115%;
+  .cat-arrow--vehiculos,
+  .cat-cell :global(.cat-arrow--vehiculos) {
+    top: 0;
+    right: 0;
+    width: 90%;
     opacity: 0.22;
   }
 
@@ -197,7 +219,8 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     background: #fff;
   }
 
-  .cat-arrow--juguetes {
+  .cat-arrow--juguetes,
+  .cat-cell :global(.cat-arrow--juguetes) {
     top: 50%;
     left: -8%;
     width: 72%;
@@ -210,7 +233,8 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     background: #ff5410;
   }
 
-  .cat-arrow--maletas {
+  .cat-arrow--maletas,
+  .cat-cell :global(.cat-arrow--maletas) {
     top: -8%;
     right: -20%;
     width: 115%;
@@ -223,7 +247,8 @@ const cat = (file: string) => `/images/sections/07-categories/${file}`;
     background: #656565;
   }
 
-  .cat-arrow--joyas {
+  .cat-arrow--joyas,
+  .cat-cell :global(.cat-arrow--joyas) {
     bottom: -8%;
     left: -10%;
     width: 72%;
