@@ -1,15 +1,17 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
-import { asset } from '../lib/assets';
+import { videoAsset } from '../lib/assets';
 
 const testimonials = [
   {
     image: '/images/sections/08-testimonials/card-1.png',
+    video: '/videos/testimonial-1.mp4',
     alt: 'Testimonio de Jhonny — Racks para TV',
     title: ['Jhonny – Racks', 'para TV'],
   },
   {
     image: '/images/sections/08-testimonials/card-2.png',
+    video: '/videos/testimonial-2.mp4',
     alt: 'Testimonio de importador — Calzado',
     title: ['María – Calzado', 'deportivo'],
   },
@@ -40,28 +42,27 @@ const testimonials = [
       {
         testimonials.map((t) => (
           <article class="testimonials-carousel__slide">
-            <button
-              type="button"
-              class="testimonials-carousel__media"
-              aria-label={`Reproducir ${t.alt}`}
-            >
-              <ResponsiveImage
-                src={t.image}
-                alt={t.alt}
-                class="testimonials-carousel__thumb"
-                sizes="85vw"
-                loading="lazy"
+            {t.video ? (
+              <video
+                class="testimonials-video testimonials-carousel__media"
+                src={videoAsset(t.video)}
+                controls
+                playsinline
+                preload="metadata"
+                controlslist="nodownload"
+                title={t.alt}
               />
-              <span class="testimonials-carousel__play" aria-hidden="true">
-                <span class="testimonials-carousel__play-btn">
-                  <img
-                    src={asset('/images/sections/03-video-stats/play-overlay.svg')}
-                    alt=""
-                    class="testimonials-carousel__play-icon"
-                  />
-                </span>
-              </span>
-            </button>
+            ) : (
+              <div class="testimonials-carousel__media">
+                <ResponsiveImage
+                  src={t.image}
+                  alt={t.alt}
+                  class="testimonials-carousel__thumb"
+                  sizes="85vw"
+                  loading="lazy"
+                />
+              </div>
+            )}
 
             <div class="testimonials-carousel__copy">
               <p class="testimonials-carousel__label">Caso de éxito</p>
@@ -84,29 +85,27 @@ const testimonials = [
       {
         testimonials.map((t) => (
           <article class="flex flex-col items-center gap-5">
-            <button
-              type="button"
-              class="group relative w-full overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-[1.02]"
-              aria-label={`Reproducir ${t.alt}`}
-            >
-              <ResponsiveImage
-                src={t.image}
-                alt={t.alt}
-                class="aspect-[861/1486] w-full object-cover"
-                sizes="25vw"
-                loading="lazy"
+            {t.video ? (
+              <video
+                class="testimonials-video w-full rounded-[20px]"
+                src={videoAsset(t.video)}
+                controls
+                playsinline
+                preload="metadata"
+                controlslist="nodownload"
+                title={t.alt}
               />
-              <span
-                class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform group-hover:scale-105"
-                aria-hidden="true"
-              >
-                <img
-                  src={asset('/images/sections/03-video-stats/play-overlay.svg')}
-                  alt=""
-                  class="h-8 w-8 object-contain"
+            ) : (
+              <div class="w-full overflow-hidden rounded-[20px]">
+                <ResponsiveImage
+                  src={t.image}
+                  alt={t.alt}
+                  class="aspect-[861/1486] w-full object-cover"
+                  sizes="25vw"
+                  loading="lazy"
                 />
-              </span>
-            </button>
+              </div>
+            )}
 
             <div class="text-center font-epilogue uppercase">
               <p class="text-base font-medium tracking-[0.12em] text-probusiness-naranja">
@@ -176,36 +175,20 @@ const testimonials = [
     border-radius: 1rem;
   }
 
-  .testimonials-carousel__thumb {
+  .testimonials-video {
+    display: block;
+    aspect-ratio: 861 / 1486;
+    width: 100%;
+    background: #000;
+    object-fit: cover;
+  }
+
+  .testimonials-carousel__thumb,
+  .testimonials-carousel__media :global(.testimonials-carousel__thumb) {
     display: block;
     aspect-ratio: 861 / 1486;
     width: 100%;
     object-fit: cover;
-  }
-
-  .testimonials-carousel__play {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .testimonials-carousel__play-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.75rem;
-    height: 3.75rem;
-    border-radius: 9999px;
-    background: var(--color-probusiness-naranja);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .testimonials-carousel__play-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    object-fit: contain;
   }
 
   .testimonials-carousel__copy {
@@ -266,9 +249,12 @@ const testimonials = [
 
       window.addEventListener('load', center, { once: true });
 
-      carousel.querySelectorAll('img').forEach((img) => {
-        if (img.complete) return;
-        img.addEventListener('load', center, { once: true });
+      carousel.querySelectorAll('img, video').forEach((media) => {
+        if (media instanceof HTMLImageElement && media.complete) return;
+        media.addEventListener('loadedmetadata', center, { once: true });
+        if (media instanceof HTMLImageElement) {
+          media.addEventListener('load', center, { once: true });
+        }
       });
 
       const resizeObserver = new ResizeObserver(() => {

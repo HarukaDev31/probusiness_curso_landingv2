@@ -1,6 +1,7 @@
 # build output
 dist/
 cdn-assets/images/
+cdn-assets/videos/
 # generated types
 .astro/
 

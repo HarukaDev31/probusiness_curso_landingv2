@@ -23,6 +23,10 @@ export function optimizedImage(path: string): string {
   return asset(`${stripExtension(path)}.webp`);
 }
 
+export function videoAsset(path: string): string {
+  return asset(path);
+}
+
 export type ResponsiveImageData = {
   fallback: string;
   webpSrcset: string;

@@ -1,0 +1,105 @@
+---
+import { asset } from '../lib/assets';
+
+interface Props {
+  src: string;
+  poster?: string;
+  class?: string;
+  videoClass?: string;
+  aspectClass?: string;
+  label?: string;
+}
+
+const {
+  src,
+  poster,
+  class: className,
+  videoClass,
+  aspectClass = 'aspect-video',
+  label = 'Reproducir video',
+} = Astro.props;
+
+const videoSrc = asset(src);
+---
+
+<div class:list={['video-player group relative overflow-hidden', className]}>
+  <video
+    class:list={['video-player__video block h-full w-full object-cover', aspectClass, videoClass]}
+    poster={poster}
+    playsinline
+    preload="none"
+    controlslist="nodownload"
+    data-video-player
+  >
+    <source src={videoSrc} type="video/mp4" />
+  </video>
+
+  <button
+    type="button"
+    class="video-player__play absolute inset-0 z-10 flex items-center justify-center transition-opacity group-[.is-playing]:pointer-events-none group-[.is-playing]:opacity-0"
+    aria-label={label}
+    data-video-play
+  >
+    <slot name="play">
+      <span
+        class="flex items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105"
+      >
+        <img
+          src={asset('/images/sections/03-video-stats/play-overlay.svg')}
+          alt=""
+          class="h-8 w-8 object-contain"
+          aria-hidden="true"
+        />
+      </span>
+    </slot>
+  </button>
+</div>
+
+<script>
+  function initVideoPlayers() {
+    document.querySelectorAll('[data-video-player]').forEach((video) => {
+      if (!(video instanceof HTMLVideoElement)) return;
+      const root = video.closest('.video-player');
+      const playBtn = root?.querySelector('[data-video-play]');
+      if (!root || !(playBtn instanceof HTMLButtonElement)) return;
+      if (root.dataset.bound === 'true') return;
+      root.dataset.bound = 'true';
+
+      const showPlaying = () => root.classList.add('is-playing');
+      const showPaused = () => root.classList.remove('is-playing');
+
+      playBtn.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+        showPlaying();
+      });
+
+      video.addEventListener('play', showPlaying);
+      video.addEventListener('pause', () => {
+        if (video.currentTime === 0 || video.ended) showPaused();
+      });
+      video.addEventListener('ended', showPaused);
+    });
+  }
+
+  initVideoPlayers();
+  document.addEventListener('astro:page-load', initVideoPlayers);
+</script>
+
+<style>
+  .video-player__video {
+    background: #000;
+  }
+
+  .video-player__video:not([controls]) {
+    pointer-events: none;
+  }
+
+  .video-player:not(.is-playing) .video-player__video {
+    pointer-events: none;
+  }
+
+  .video-player.is-playing .video-player__video {
+    pointer-events: auto;
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
-import { asset } from '../lib/assets';
+import { asset, videoAsset } from '../lib/assets';
+
+const statsVideo = videoAsset('/videos/landing-02.mp4');
 ---
 
 <section class="site-section relative isolate overflow-hidden">
@@ -48,23 +50,15 @@ import { asset } from '../lib/assets';
     </div>
 
     <div id="video-mobile" class="relative w-full">
-      <ResponsiveImage
-        src="/images/sections/03-video-stats/video-thumbnail.png"
-        alt="Vista previa del curso en videollamada"
-        class="aspect-video w-full rounded-[10px] object-cover"
-        sizes="(max-width: 1023px) 100vw, 66vw"
+      <video
+        class="stats-video aspect-video w-full rounded-[10px] bg-black object-cover"
+        src={statsVideo}
+        controls
+        playsinline
+        preload="metadata"
+        controlslist="nodownload"
+        title="Clase gratuita ProBusiness"
       />
-      <button
-        class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105"
-        aria-label="Reproducir video"
-      >
-        <img
-          src={asset('/images/sections/03-video-stats/play-overlay.svg')}
-          alt=""
-          class="h-8 w-8 object-contain"
-          aria-hidden="true"
-        />
-      </button>
     </div>
 
     <div class="stats-mobile-grid grid grid-cols-3 divide-x divide-white/30">
@@ -134,23 +128,15 @@ import { asset } from '../lib/assets';
       </div>
       <div class="mt-4 w-full">
         <div id="video" class="relative w-[95%] rounded-[20px]">
-          <ResponsiveImage
-            src="/images/sections/03-video-stats/video-thumbnail.png"
-            alt="Vista previa del curso en videollamada"
-            class="h-[700px] w-full rounded-[10px] object-cover"
-            sizes="(max-width: 1023px) 100vw, 66vw"
+          <video
+            class="stats-video h-[700px] w-full rounded-[10px] bg-black object-cover"
+            src={statsVideo}
+            controls
+            playsinline
+            preload="metadata"
+            controlslist="nodownload"
+            title="Clase gratuita ProBusiness"
           />
-          <button
-            class="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105 xl:h-36 xl:w-36"
-            aria-label="Reproducir video"
-          >
-            <img
-              src={asset('/images/sections/03-video-stats/play-overlay.svg')}
-              alt=""
-              class="h-16 w-16 object-contain xl:h-20 xl:w-20"
-              aria-hidden="true"
-            />
-          </button>
         </div>
       </div>
     </div>
