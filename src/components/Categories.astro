@@ -1,3 +1,10 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+
+const cat = (file: string) => `/images/sections/07-categories/${file}`;
+---
+
 <section class="categories-section relative overflow-hidden">
   <div class="relative z-10">
     <h2
@@ -11,84 +18,84 @@
 
     <div class="categories-grid">
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/1.png" alt="Importador mostrando producto" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('1.png')} alt="Importador mostrando producto" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--tecnologia">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/2.svg" alt="" class="cat-arrow cat-arrow--tecnologia" aria-hidden="true" />
+        <img src={asset(cat('2.svg'))} alt="" class="cat-arrow cat-arrow--tecnologia" aria-hidden="true" />
         <p class="cat-label">Tecnología</p>
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/3.png" alt="Emprendedor en almacén" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('3.png')} alt="Emprendedor en almacén" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/4.png" alt="Importadora en centro logístico" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('4.png')} alt="Importadora en centro logístico" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/5.png" alt="Emprendedora con vehículo" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('5.png')} alt="Emprendedora con vehículo" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/6.png" alt="Importador frente a camión" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('6.png')} alt="Importador frente a camión" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/7.png" alt="Pareja emprendedora" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('7.png')} alt="Pareja emprendedora" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/8.png" alt="Importadora con calzado" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('8.png')} alt="Importadora con calzado" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--vehiculos flex justify-end">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/9.png" alt="" class="cat-arrow  w-[90%]" aria-hidden="true" />
+        <ResponsiveImage src={cat('9.png')} alt="" class="cat-arrow  w-[90%]" sizes="40vw" aria-hidden="true" responsive={false} />
         <p class="cat-label">Vehículos</p>
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/10.png" alt="Importador con producto" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('10.png')} alt="Importador con producto" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--juguetes">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/11.svg" alt="" class="cat-arrow cat-arrow--juguetes" aria-hidden="true" />
+        <img src={asset(cat('11.svg'))} alt="" class="cat-arrow cat-arrow--juguetes" aria-hidden="true" />
         <p class="cat-label cat-label--muted">Juguetes</p>
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/12.png" alt="Emprendedora con caja" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('12.png')} alt="Emprendedora con caja" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/13.png" alt="Importadora con producto" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('13.png')} alt="Importadora con producto" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/14.png" alt="Importador en almacén" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('14.png')} alt="Importador en almacén" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--maletas">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/2.svg" alt="" class="cat-arrow cat-arrow--maletas" aria-hidden="true" />
+        <img src={asset(cat('2.svg'))} alt="" class="cat-arrow cat-arrow--maletas" aria-hidden="true" />
         <p class="cat-label cat-label--right">Maletas</p>
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/16.png" alt="Emprendedor importador" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('16.png')} alt="Emprendedor importador" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/17.png" alt="Importador en depósito" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('17.png')} alt="Importador en depósito" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--joyas">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/18.svg" alt="" class="cat-arrow cat-arrow--joyas" aria-hidden="true" />
+        <img src={asset(cat('18.svg'))} alt="" class="cat-arrow cat-arrow--joyas" aria-hidden="true" />
         <p class="cat-label">Joyas</p>
       </div>
 
       <div class="cat-cell">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/19.png" alt="Importador satisfecho" class="cat-photo" loading="lazy" />
+        <ResponsiveImage src={cat('19.png')} alt="Importador satisfecho" class="cat-photo" sizes="(max-width: 768px) 45vw, 18vw" loading="lazy" />
       </div>
 
       <div class="cat-cell cat-cell--ymas">
@@ -96,7 +103,7 @@
       </div>
 
       <div class="cat-cell cat-cell--mobile-extra">
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/07-categories/20.png" alt="" class="cat-photo" loading="lazy" aria-hidden="true" />
+        <ResponsiveImage src={cat('20.png')} alt="" class="cat-photo" sizes="45vw" loading="lazy" aria-hidden="true" />
       </div>
     </div>
   </div>

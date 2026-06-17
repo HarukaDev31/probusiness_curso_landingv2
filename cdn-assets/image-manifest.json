@@ -1,0 +1,462 @@
+{
+  "/images/sections/01-header/logo-full.png": {
+    "widths": [
+      501
+    ],
+    "defaultWidth": 501,
+    "hasAvif": false
+  },
+  "/images/sections/02-hero/bg-hero-mobile.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/02-hero/bg-hero.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/02-hero/card-ccl.png": {
+    "widths": [
+      400,
+      480
+    ],
+    "defaultWidth": 480,
+    "hasAvif": true
+  },
+  "/images/sections/02-hero/card-peru.png": {
+    "widths": [
+      400,
+      480
+    ],
+    "defaultWidth": 480,
+    "hasAvif": true
+  },
+  "/images/sections/02-hero/card-sin-exp.png": {
+    "widths": [
+      424
+    ],
+    "defaultWidth": 424,
+    "hasAvif": false
+  },
+  "/images/sections/02-hero/hero-cajas.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/02-hero/logo-ccl.png": {
+    "widths": [
+      176
+    ],
+    "defaultWidth": 176,
+    "hasAvif": false
+  },
+  "/images/sections/03-video-stats/bg-wave.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/03-video-stats/video-thumbnail.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/04-features/puntillismo-mobile.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/04-features/puntillismo.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/05-before-after/antesdelcurso.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/05-before-after/bg-puerto.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/05-before-after/despuesdelcurso.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/06-instructor/bg-grid.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/06-instructor/foto-instructor.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/1.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/10.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/12.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/13.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/14.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/16.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/17.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/19.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/3.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/4.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/5.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/6.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/7.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/8.png": {
+    "widths": [
+      400,
+      600,
+      768
+    ],
+    "defaultWidth": 768,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/9.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/07-categories/bg.jpg": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/08-testimonials/bg-section.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/08-testimonials/card-1.png": {
+    "widths": [
+      400,
+      480
+    ],
+    "defaultWidth": 480,
+    "hasAvif": true
+  },
+  "/images/sections/08-testimonials/card-2.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/08-testimonials/card-3.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/08-testimonials/card-4.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/09-pricing/bg-logistica.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/09-pricing/bg.png": {
+    "widths": [
+      400,
+      960,
+      1920
+    ],
+    "defaultWidth": 1920,
+    "hasAvif": true
+  },
+  "/images/sections/09-pricing/box-desktop.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/09-pricing/box-mobile.png": {
+    "widths": [
+      400,
+      480
+    ],
+    "defaultWidth": 480,
+    "hasAvif": true
+  },
+  "/images/sections/09-pricing/cohete.png": {
+    "widths": [
+      500
+    ],
+    "defaultWidth": 500,
+    "hasAvif": false
+  },
+  "/images/sections/09-pricing/mascota.png": {
+    "widths": [
+      500
+    ],
+    "defaultWidth": 500,
+    "hasAvif": false
+  },
+  "/images/sections/10-countdown/box.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/10-countdown/figma-full.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/11-benefits/icon-carga.png": {
+    "widths": [
+      1536
+    ],
+    "defaultWidth": 1536,
+    "hasAvif": true
+  },
+  "/images/sections/11-benefits/icon-comunidad.png": {
+    "widths": [
+      1536
+    ],
+    "defaultWidth": 1536,
+    "hasAvif": true
+  },
+  "/images/sections/11-benefits/icon-semanas.png": {
+    "widths": [
+      1536
+    ],
+    "defaultWidth": 1536,
+    "hasAvif": true
+  },
+  "/images/sections/11-benefits/icon-soporte.png": {
+    "widths": [
+      1536
+    ],
+    "defaultWidth": 1536,
+    "hasAvif": true
+  },
+  "/images/sections/13-contact/bg-left.png": {
+    "widths": [
+      400,
+      480,
+      600
+    ],
+    "defaultWidth": 600,
+    "hasAvif": true
+  },
+  "/images/sections/13-contact/caja-producto.png": {
+    "widths": [
+      400,
+      600,
+      960
+    ],
+    "defaultWidth": 960,
+    "hasAvif": true
+  },
+  "/images/sections/14-footer/logo-ccl.png": {
+    "widths": [
+      304
+    ],
+    "defaultWidth": 304,
+    "hasAvif": false
+  },
+  "/images/sections/14-footer/logo-large.png": {
+    "widths": [
+      1564
+    ],
+    "defaultWidth": 1564,
+    "hasAvif": true
+  }
+}

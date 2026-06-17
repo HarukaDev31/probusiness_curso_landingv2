@@ -1,22 +1,25 @@
 ---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+
 const testimonials = [
   {
-    image: 'https://cdn.probusiness.pe/landing_curso_v2/images/sections/08-testimonials/card-1.png',
+    image: '/images/sections/08-testimonials/card-1.png',
     alt: 'Testimonio de Jhonny — Racks para TV',
     title: ['Jhonny – Racks', 'para TV'],
   },
   {
-    image: 'https://cdn.probusiness.pe/landing_curso_v2/images/sections/08-testimonials/card-2.png',
+    image: '/images/sections/08-testimonials/card-2.png',
     alt: 'Testimonio de importador — Calzado',
     title: ['María – Calzado', 'deportivo'],
   },
   {
-    image: 'https://cdn.probusiness.pe/landing_curso_v2/images/sections/08-testimonials/card-3.png',
+    image: '/images/sections/08-testimonials/card-3.png',
     alt: 'Testimonio de importador — Tecnología',
     title: ['Carlos – Accesorios', 'tecnológicos'],
   },
   {
-    image: 'https://cdn.probusiness.pe/landing_curso_v2/images/sections/08-testimonials/card-4.png',
+    image: '/images/sections/08-testimonials/card-4.png',
     alt: 'Testimonio de importador — Hogar',
     title: ['Lucía – Productos', 'para hogar'],
   },
@@ -42,16 +45,17 @@ const testimonials = [
               class="testimonials-carousel__media"
               aria-label={`Reproducir ${t.alt}`}
             >
-              <img
+              <ResponsiveImage
                 src={t.image}
                 alt={t.alt}
                 class="testimonials-carousel__thumb"
+                sizes="85vw"
                 loading="lazy"
               />
               <span class="testimonials-carousel__play" aria-hidden="true">
                 <span class="testimonials-carousel__play-btn">
                   <img
-                    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/play-overlay.svg"
+                    src={asset('/images/sections/03-video-stats/play-overlay.svg')}
                     alt=""
                     class="testimonials-carousel__play-icon"
                   />
@@ -85,10 +89,11 @@ const testimonials = [
               class="group relative w-full overflow-hidden rounded-[20px] transition-transform duration-300 hover:scale-[1.02]"
               aria-label={`Reproducir ${t.alt}`}
             >
-              <img
+              <ResponsiveImage
                 src={t.image}
                 alt={t.alt}
                 class="aspect-[861/1486] w-full object-cover"
+                sizes="25vw"
                 loading="lazy"
               />
               <span
@@ -96,7 +101,7 @@ const testimonials = [
                 aria-hidden="true"
               >
                 <img
-                  src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/play-overlay.svg"
+                  src={asset('/images/sections/03-video-stats/play-overlay.svg')}
                   alt=""
                   class="h-8 w-8 object-contain"
                 />

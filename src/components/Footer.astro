@@ -1,4 +1,7 @@
 ---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+
 const footerStats = [
   { value: '+5000', label: 'Alumnos egresados' },
   { value: '+10', label: 'Años de experiencia' },
@@ -8,28 +11,30 @@ const footerStats = [
 <footer class="footer">
   <div class="site-container footer__inner">
     <a href="#inicio" class="footer-brand" aria-label="ProBusiness — Inicio">
-      <img
-        src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/14-footer/logo-large.png"
+      <ResponsiveImage
+        src="/images/sections/14-footer/logo-large.png"
         alt="probusiness"
         class="footer-brand__logo"
         loading="lazy"
+        responsive={false}
       />
     </a>
 
     <div class="footer-stats">
       <div class="footer-stat">
-        <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/14-footer/logo-ccl.png"
+        <ResponsiveImage
+          src="/images/sections/14-footer/logo-ccl.png"
           alt="CCL"
           class="footer-stat__logo footer-stat__logo--ccl"
           loading="lazy"
+          responsive={false}
         />
         <p class="footer-stat__label">Respaldado por la CCL</p>
       </div>
 
       <div class="footer-stat">
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/14-footer/icon-china.svg"
+          src={asset('/images/sections/14-footer/icon-china.svg')}
           alt=""
           class="footer-stat__logo footer-stat__logo--china"
           aria-hidden="true"

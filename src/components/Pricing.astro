@@ -1,24 +1,32 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+---
+
 <section id="planes" class="pricing-section relative overflow-hidden bg-black">
   <div class="pricing-hero-bg pointer-events-none absolute inset-x-0 top-0">
-    <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/bg.png" alt="" aria-hidden="true" />
+    <ResponsiveImage src="/images/sections/09-pricing/bg.png" alt="" sizes="100vw" aria-hidden="true" loading="lazy" />
     <div class="pricing-hero-fade absolute inset-0" aria-hidden="true"></div>
   </div>
   <div class="pricing-hero-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" aria-hidden="true"></div>
 
-  <img
-    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/box-desktop.png"
+  <ResponsiveImage
+    src="/images/sections/09-pricing/box-desktop.png"
     alt=""
     class="pointer-events-none absolute right-[0%] top-[4%] z-20 hidden w-[min(28vw,340px)] object-contain lg:block xl:w-[380px]"
+    sizes="28vw"
     aria-hidden="true"
     loading="lazy"
   />
 
-  <img
-    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/box-mobile.png"
+  <ResponsiveImage
+    src="/images/sections/09-pricing/box-mobile.png"
     alt=""
     class="pricing-box-mobile pointer-events-none absolute z-20 lg:hidden"
+    sizes="40vw"
     aria-hidden="true"
     loading="lazy"
+    responsive={false}
   />
 
   <div class="site-container relative z-10 pt-[min(22vw,300px)] pb-16 lg:pb-20">
@@ -240,12 +248,14 @@
 
     <div class="pricing-promo pricing-promo--desktop hidden lg:flex">
       <div class="pricing-code">
-        <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/cohete.png"
+        <ResponsiveImage
+          src="/images/sections/09-pricing/cohete.png"
           alt=""
           class="pricing-code__rocket"
+          sizes="120px"
           aria-hidden="true"
           loading="lazy"
+          responsive={false}
         />
 
         <div class="flex flex-row">
@@ -264,7 +274,7 @@
                 >
                   <div class="flex flex-col items-center gap-2">
                     <img
-                      src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/icon-copy.svg"
+                      src={asset('/images/sections/09-pricing/icon-copy.svg')}
                       alt=""
                       width="20"
                       height="20"
@@ -311,12 +321,14 @@
 
     <div class="pricing-promo pricing-promo--mobile lg:hidden">
       <div class="pricing-code">
-        <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/cohete.png"
+        <ResponsiveImage
+          src="/images/sections/09-pricing/cohete.png"
           alt=""
           class="pricing-code__rocket"
+          sizes="120px"
           aria-hidden="true"
           loading="lazy"
+          responsive={false}
         />
 
         <div class="pricing-code__main">
@@ -336,7 +348,7 @@
               aria-label="Copiar código CURSOPRO"
             >
               <img
-                src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/09-pricing/icon-copy.svg"
+                src={asset('/images/sections/09-pricing/icon-copy.svg')}
                 alt=""
                 class="pricing-code__copy-icon"
                 width="20"
@@ -384,7 +396,17 @@
     overflow: hidden;
   }
 
-  .pricing-hero-bg img {
+  .pricing-hero-bg :global(picture) {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .pricing-hero-bg img,
+  .pricing-hero-bg :global(img) {
     position: absolute;
     left: 0;
     width: 100%;
@@ -697,8 +719,10 @@
     max-width: 62rem;
   }
 
-  .pricing-code__rocket {
+  .pricing-code__rocket,
+  .pricing-code :global(.pricing-code__rocket) {
     width: clamp(96px, 9vw, 155px);
+    max-width: 155px;
     height: auto;
     flex-shrink: 0;
     transform: rotate(16.39deg);
@@ -880,19 +904,19 @@
 
   @media (max-width: 1023px) {
     #planes > .site-container {
-      padding-top: clamp(5rem, 20vw, 7.5rem);
+      padding-top: clamp(4rem, 16vw, 6rem);
     }
 
     .pricing-hero-bg {
-      height: clamp(64px, 17vw, 96px);
+      height: clamp(48px, 12vw, 72px);
     }
 
     .pricing-hero-fade-top {
-      height: clamp(64px, 17vw, 96px);
+      height: clamp(48px, 12vw, 72px);
       background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.5) 38%,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.35) 50%,
         #000 100%
       );
     }
@@ -901,22 +925,27 @@
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.75) 35%,
-        #000 100%
+        rgba(0, 0, 0, 0.55) 45%,
+        #000 85%
       );
     }
 
-    .pricing-hero-bg img {
-      height: 155%;
-      top: -18%;
+    .pricing-hero-bg img,
+    .pricing-hero-bg :global(img) {
+      height: 140%;
+      top: -15%;
     }
 
-    .pricing-box-mobile {
-      right: -2%;
-      top: clamp(3.25rem, 13vw, 5.5rem);
-      width: min(42vw, 175px);
+    .pricing-box-mobile,
+    .pricing-section :global(.pricing-box-mobile) {
+      right: 0;
+      left: auto;
+      top: clamp(3rem, 12vw, 4.75rem);
+      width: min(36vw, 150px);
+      max-width: 150px;
       z-index: 15;
       object-fit: contain;
+      object-position: right center;
     }
 
     .pricing-promo--mobile {
@@ -1157,8 +1186,10 @@
       text-align: center;
     }
 
-    .pricing-promo--mobile .pricing-code__rocket {
-      width: clamp(72px, 22vw, 110px);
+    .pricing-promo--mobile .pricing-code__rocket,
+    .pricing-promo--mobile .pricing-code :global(.pricing-code__rocket) {
+      width: clamp(56px, 16vw, 80px);
+      max-width: 80px;
     }
 
     .pricing-promo--mobile .pricing-code__main {

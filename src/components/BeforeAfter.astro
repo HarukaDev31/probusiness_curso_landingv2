@@ -1,9 +1,16 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+---
+
 <section id="beneficios" class="before-after-section relative">
-  <img
-    src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bg-puerto.png"
+  <ResponsiveImage
+    src="/images/sections/05-before-after/bg-puerto.png"
     alt=""
     class="before-after-section__bg pointer-events-none h-full w-full object-cover opacity-20"
+    sizes="100vw"
     aria-hidden="true"
+    loading="lazy"
   />
   <div class="before-after-section__fade before-after-section__fade--top" aria-hidden="true"></div>
 
@@ -12,7 +19,7 @@
       <div class="before-after-card before-after-card--antes rounded-l-lg bg-zinc-900/90 backdrop-blur-sm lg:rounded-l-xl lg:rounded-tr-none lg:p-10">
         <div class="before-after-card__header flex flex-col items-center text-center">
           <img
-            src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/icon-antes.svg"
+            src={asset('/images/sections/05-before-after/icon-antes.svg')}
             alt=""
             class="before-after-card__icon-header object-contain"
             aria-hidden="true"
@@ -25,33 +32,33 @@
         </div>
         <ul class="before-after-card__list">
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-negativo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-white/50">No sabes qué producto importar.</span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-negativo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-white/50">No sabes cómo contactar proveedores.</span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-negativo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-white/50">Tienes miedo a perder tu dinero.</span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-negativo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-white/50">No conoces los procesos y todo te parece confuso.</span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-negativo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-negativo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line">Tu negocio no avanza.</span>
           </li>
         </ul>
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" aria-hidden="true" />
+        <ResponsiveImage src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
       </div>
 
       <div class="before-after-card before-after-card--despues rounded-r-lg bg-white lg:rounded-r-xl lg:rounded-bl-none lg:px-10 lg:pt-10">
         <div class="before-after-card__header flex flex-col items-center text-center">
           <img
-            src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/icon-despues.svg"
+            src={asset('/images/sections/05-before-after/icon-despues.svg')}
             alt=""
             class="before-after-card__icon-header object-contain"
             aria-hidden="true"
@@ -64,37 +71,37 @@
         </div>
         <ul class="before-after-card__list">
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-positivo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-black/50">
               Encuentras <strong>productos rentables</strong>.
             </span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-positivo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-black/50">
               Contactas fácilmente con <strong>proveedores confiables</strong>.
             </span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-positivo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-black/50">
               Calculas costos reales y <strong>aumentas tu margen de ganancia</strong>.
             </span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-positivo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line border-black/50">
               <strong>Importas sin riesgo</strong> ni complicaciones.
             </span>
           </li>
           <li class="before-after-card__item">
-            <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/bullet-positivo.svg" alt="" class="before-after-card__bullet" aria-hidden="true" />
+            <img src={asset('/images/sections/05-before-after/bullet-positivo.svg')} alt="" class="before-after-card__bullet" aria-hidden="true" />
             <span class="before-after-card__line">
               Empiezas a <strong>potenciar tu negocio</strong>.
             </span>
           </li>
         </ul>
-        <img src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" aria-hidden="true" />
+        <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
       </div>
     </div>
   </div>

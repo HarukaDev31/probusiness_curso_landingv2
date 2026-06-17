@@ -1,10 +1,17 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import { asset } from '../lib/assets';
+---
+
 <section class="site-section relative isolate overflow-hidden">
   <div class="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-[80%] -translate-y-1/2" aria-hidden="true">
-    <img
-      src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/bg-wave.png"
+    <ResponsiveImage
+      src="/images/sections/03-video-stats/bg-wave.png"
       alt=""
       class="h-full w-full object-cover opacity-55"
+      sizes="100vw"
       loading="lazy"
+      aria-hidden="true"
     />
     <div class="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-black via-black/70 to-transparent"></div>
     <div class="absolute inset-y-0 right-0 w-[18%] bg-gradient-to-l from-black via-black/70 to-transparent"></div>
@@ -28,7 +35,7 @@
 
     <div class="flex items-center gap-2">
       <img
-        src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/02-hero/icon-play-classbar.svg"
+        src={asset('/images/sections/02-hero/icon-play-classbar.svg')}
         alt=""
         class="h-8 w-8 shrink-0 object-contain"
         width="116"
@@ -41,17 +48,18 @@
     </div>
 
     <div id="video-mobile" class="relative w-full">
-      <img
-        src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/video-thumbnail.png"
+      <ResponsiveImage
+        src="/images/sections/03-video-stats/video-thumbnail.png"
         alt="Vista previa del curso en videollamada"
         class="aspect-video w-full rounded-[10px] object-cover"
+        sizes="(max-width: 1023px) 100vw, 66vw"
       />
       <button
         class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105"
         aria-label="Reproducir video"
       >
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/play-overlay.svg"
+          src={asset('/images/sections/03-video-stats/play-overlay.svg')}
           alt=""
           class="h-8 w-8 object-contain"
           aria-hidden="true"
@@ -62,7 +70,7 @@
     <div class="stats-mobile-grid grid grid-cols-3 divide-x divide-white/30">
       <div class="flex flex-col items-center px-1 py-2 text-center">
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-experiencia.svg"
+          src={asset('/images/sections/03-video-stats/icon-experiencia.svg')}
           alt=""
           class="mb-2 h-11 w-11 object-contain"
           aria-hidden="true"
@@ -75,7 +83,7 @@
 
       <div class="flex flex-col items-center px-1 py-2 text-center">
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-alumnos.svg"
+          src={asset('/images/sections/03-video-stats/icon-alumnos.svg')}
           alt=""
           class="mb-2 h-11 w-11 object-contain"
           aria-hidden="true"
@@ -88,7 +96,7 @@
 
       <div class="flex flex-col items-center px-1 py-2 text-center">
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-importaciones.svg"
+          src={asset('/images/sections/03-video-stats/icon-importaciones.svg')}
           alt=""
           class="mb-2 h-11 w-11 object-contain"
           aria-hidden="true"
@@ -113,7 +121,7 @@
     <div class="col-span-2">
       <div class="flex items-center gap-2">
         <img
-          src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/02-hero/icon-play-classbar.svg"
+          src={asset('/images/sections/02-hero/icon-play-classbar.svg')}
           alt=""
           class="h-10 w-10 shrink-0 object-contain xl:h-[40px] xl:w-[40px]"
           width="116"
@@ -126,17 +134,18 @@
       </div>
       <div class="mt-4 w-full">
         <div id="video" class="relative w-[95%] rounded-[20px]">
-          <img
-            src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/video-thumbnail.png"
+          <ResponsiveImage
+            src="/images/sections/03-video-stats/video-thumbnail.png"
             alt="Vista previa del curso en videollamada"
             class="h-[700px] w-full rounded-[10px] object-cover"
+            sizes="(max-width: 1023px) 100vw, 66vw"
           />
           <button
             class="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-probusiness-naranja transition-transform hover:scale-105 xl:h-36 xl:w-36"
             aria-label="Reproducir video"
           >
             <img
-              src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/play-overlay.svg"
+              src={asset('/images/sections/03-video-stats/play-overlay.svg')}
               alt=""
               class="h-16 w-16 object-contain xl:h-20 xl:w-20"
               aria-hidden="true"
@@ -166,7 +175,7 @@
         <div class="w-[80%] min-w-[300px] divide-y divide-white/85">
           <div class="flex items-center gap-2 py-8 first:pt-0 last:pb-0">
             <img
-              src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-experiencia.svg"
+              src={asset('/images/sections/03-video-stats/icon-experiencia.svg')}
               alt=""
               class="h-20 w-20 shrink-0 object-contain xl:h-24 xl:w-24"
               aria-hidden="true"
@@ -179,7 +188,7 @@
 
           <div class="flex items-center gap-2 py-8 first:pt-0 last:pb-0">
             <img
-              src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-alumnos.svg"
+              src={asset('/images/sections/03-video-stats/icon-alumnos.svg')}
               alt=""
               class="h-20 w-20 shrink-0 object-contain xl:h-24 xl:w-24"
               aria-hidden="true"
@@ -192,7 +201,7 @@
 
           <div class="flex items-center gap-2 py-8 first:pt-0 last:pb-0">
             <img
-              src="https://cdn.probusiness.pe/landing_curso_v2/images/sections/03-video-stats/icon-importaciones.svg"
+              src={asset('/images/sections/03-video-stats/icon-importaciones.svg')}
               alt=""
               class="h-20 w-20 shrink-0 object-contain xl:h-24 xl:w-24"
               aria-hidden="true"
