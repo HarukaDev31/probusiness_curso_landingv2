@@ -151,11 +151,6 @@ body {
     margin-bottom: -12rem;
   }
 
-  .before-after-section {
-    overflow: visible;
-    padding-bottom: clamp(4.5rem, 9vw, 7rem);
-  }
-
   .before-after-section__bg-wrap .before-after-section__bg {
     opacity: 0.32;
   }

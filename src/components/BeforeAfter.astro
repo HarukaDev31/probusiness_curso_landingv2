@@ -213,12 +213,8 @@ import { asset } from '../lib/assets';
   }
 
   @media (min-width: 1024px) {
-    .before-after-grid {
-      overflow: visible;
-    }
-
     .before-after-card {
-      overflow: visible;
+      overflow: hidden;
       padding: 2.5rem 2.5rem 0;
     }
 
@@ -271,31 +267,25 @@ import { asset } from '../lib/assets';
 
     .before-after-card__photo-wrap {
       flex: 0 0 auto;
-      position: relative;
-      z-index: 2;
+      display: flex;
+      justify-content: center;
       margin-top: auto;
-      margin-inline: -1.25rem;
-      margin-bottom: -2rem;
-      min-height: clamp(14rem, 24vw, 22rem);
-      overflow: visible;
+      width: 100%;
+      overflow: hidden;
     }
 
     .before-after-card__photo-wrap :global(picture) {
       display: block;
-      width: 112%;
-      max-width: 112%;
+      width: 80%;
       margin-inline: auto;
-      min-height: inherit;
     }
 
     .before-after-card__photo,
     .before-after-card__photo-wrap :global(.before-after-card__photo) {
       width: 100%;
-      min-height: clamp(14rem, 24vw, 22rem);
+      height: auto;
       object-fit: contain;
       object-position: bottom center;
-      transform: scale(1.06);
-      transform-origin: bottom center;
     }
   }
 </style>
