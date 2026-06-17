@@ -4,14 +4,15 @@ import { asset } from '../lib/assets';
 ---
 
 <section id="beneficios" class="before-after-section relative">
-  <ResponsiveImage
-    src="/images/sections/05-before-after/bg-puerto.png"
-    alt=""
-    class="before-after-section__bg pointer-events-none h-full w-full object-cover opacity-20"
-    sizes="100vw"
-    aria-hidden="true"
-    loading="lazy"
-  />
+  <div class="before-after-section__bg-wrap" aria-hidden="true">
+    <ResponsiveImage
+      src="/images/sections/05-before-after/bg-puerto.png"
+      alt=""
+      class="before-after-section__bg"
+      sizes="100vw"
+      loading="lazy"
+    />
+  </div>
   <div class="before-after-section__fade before-after-section__fade--top" aria-hidden="true"></div>
 
   <div class="before-after-section__cards relative z-10 mx-auto w-[90%] lg:site-container lg:w-full">
@@ -53,7 +54,7 @@ import { asset } from '../lib/assets';
           </li>
         </ul>
         <div class="before-after-card__photo-wrap">
-          <ResponsiveImage src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+          <ResponsiveImage src="/images/sections/05-before-after/antesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 40vw" aria-hidden="true" loading="lazy" />
         </div>
       </div>
 
@@ -104,7 +105,7 @@ import { asset } from '../lib/assets';
           </li>
         </ul>
         <div class="before-after-card__photo-wrap">
-          <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 35vw" aria-hidden="true" loading="lazy" />
+          <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 40vw" aria-hidden="true" loading="lazy" />
         </div>
       </div>
     </div>
@@ -212,7 +213,12 @@ import { asset } from '../lib/assets';
   }
 
   @media (min-width: 1024px) {
+    .before-after-grid {
+      overflow: visible;
+    }
+
     .before-after-card {
+      overflow: visible;
       padding: 2.5rem 2.5rem 0;
     }
 
@@ -235,39 +241,61 @@ import { asset } from '../lib/assets';
     }
 
     .before-after-card__list {
-      gap: 1rem;
+      flex: 0 0 auto;
+      gap: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .before-after-card__item {
       align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 1.875rem;
-      line-height: 1.2;
+      gap: 1rem;
+      font-size: 2.125rem;
+      line-height: 1.25;
       text-align: left;
     }
 
+    .before-after-card--despues .before-after-card__item {
+      font-size: 2.125rem;
+    }
+
     .before-after-card__bullet {
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
       width: 2rem;
       height: 2rem;
     }
 
     .before-after-card__line {
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.875rem;
       text-align: left;
     }
 
     .before-after-card__photo-wrap {
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 2;
       margin-top: auto;
+      margin-inline: -1.25rem;
+      margin-bottom: -2rem;
+      min-height: clamp(14rem, 24vw, 22rem);
+      overflow: visible;
+    }
+
+    .before-after-card__photo-wrap :global(picture) {
+      display: block;
+      width: 112%;
+      max-width: 112%;
+      margin-inline: auto;
+      min-height: inherit;
     }
 
     .before-after-card__photo,
     .before-after-card__photo-wrap :global(.before-after-card__photo) {
+      width: 100%;
+      min-height: clamp(14rem, 24vw, 22rem);
+      object-fit: contain;
       object-position: bottom center;
-    }
-
-    .before-after-card--despues .before-after-card__item {
-      font-size: 1.5rem;
+      transform: scale(1.06);
+      transform-origin: bottom center;
     }
   }
 </style>
