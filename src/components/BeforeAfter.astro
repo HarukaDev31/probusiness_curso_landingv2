@@ -26,9 +26,11 @@ import { asset } from '../lib/assets';
             aria-hidden="true"
           />
           <h3 class="before-after-card__title font-sora font-normal text-white/70">
+            <strong>
             Antes
             <br />
             del curso
+            </strong>
           </h3>
         </div>
         <ul class="before-after-card__list">
@@ -104,7 +106,7 @@ import { asset } from '../lib/assets';
             </span>
           </li>
         </ul>
-        <div class="before-after-card__photo-wrap">
+        <div class="before-after-card__photo-wrap" style="width: 88%!important; margin-inline: auto!important; "> 
           <ResponsiveImage src="/images/sections/05-before-after/despuesdelcurso.png" alt="" class="before-after-card__photo w-full" sizes="(max-width: 1023px) 50vw, 40vw" aria-hidden="true" loading="lazy" />
         </div>
       </div>
@@ -135,7 +137,11 @@ import { asset } from '../lib/assets';
     font-size: 0.625rem;
     line-height: 1.05;
   }
-
+  @media (max-width: 480px) {
+    .before-after-card__title {
+      font-size: 0.825rem;
+    }
+  }
   .before-after-card__list {
     display: flex;
     flex-direction: column;

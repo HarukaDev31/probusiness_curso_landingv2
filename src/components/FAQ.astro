@@ -5,16 +5,18 @@ const faqs = [
     a: "No necesitas experiencia previa. Te guiamos paso a paso desde cero, con un método práctico y fácil de aplicar, para que puedas importar con seguridad desde tu primera compra.",
   },
   {
-    q: "¿Cuánto dinero necesito para empezar?",
+    q: "¿Cuánto dinero necesito para empezar a importar?",
     a: "Puedes comenzar desde $800 USD. Tú decides cuánto invertir según tu objetivo, y te enseñamos cómo optimizar cada dólar para reducir riesgos y maximizar ganancias.",
   },
   {
     q: "¿El curso es en vivo o grabado?",
-    a: "Las clases son 100% en vivo, donde podrás interactuar con expertos, hacer preguntas en tiempo real y aprender con casos reales.",
+    a: "Las clases son virtuales y 100% en vivo, por lo que podrás interactuar con los expertos, hacer preguntas en tiempo real y aprender mediante casos prácticos y experiencias reales de importación. ",
+    a2:"Además, tendrás acceso a nuestra aula virtual, donde podrás revisar las grabaciones de cada sesión para repasar el contenido cuando lo necesites y avanzar a tu propio ritmo.",
   },
   {
     q: "¿Qué pasa después de terminar el curso?",
-    a: "Te enseñamos a analizar productos rentables, validar demanda y evitar errores típicos de principiantes que terminan comprando productos que no se venden.",
+    a: "Obtendrás las herramientas, conocimientos y habilidades necesarias para realizar importaciones exitosas por tu cuenta, con mayor seguridad y confianza.",
+    a2:"Además, tendrás acceso durante 1 año a nuestro canal Ayuda Importadora, donde podrás resolver dudas y recibir acompañamiento de nuestro equipo cada vez que lo necesites durante tus procesos de importación.",
   },
   {
     q: "¿Cómo sé qué producto importar para no perder dinero?",
@@ -38,7 +40,7 @@ const center = faqs.slice(6);
 <section id="faq" class="site-section relative">
   <div class="site-container">
     <h2
-      class="mb-10 text-center font-sora text-3xl font-bold text-white md:text-4xl lg:mb-12 lg:text-5xl xl:text-6xl"
+      class="mb-10 mt-8 text-center font-sora text-3xl font-bold text-white md:text-4xl lg:mb-12 lg:text-5xl xl:text-6xl"
     >
       Preguntas <span class="text-probusiness-naranja">frecuentes</span>
     </h2>
@@ -76,6 +78,9 @@ const center = faqs.slice(6);
               <div class="border-t border-white/10 px-5 pb-5 pt-3 lg:px-6 lg:pb-6">
                 <p class="font-epilogue text-sm leading-relaxed text-white/70 lg:text-base">
                   {faq.a}
+                </p>
+                <p class="font-epilogue text-sm leading-relaxed text-white/70 lg:text-base">
+                  {faq.a2}
                 </p>
               </div>
             </details>

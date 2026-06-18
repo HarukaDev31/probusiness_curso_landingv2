@@ -4,8 +4,20 @@ import { asset } from '../lib/assets';
 ---
 
 <section id="planes" class="pricing-section relative overflow-hidden bg-black">
-  <div class="pricing-hero-bg pointer-events-none absolute inset-x-0 top-0">
+  <div class="pricing-hero-bg pricing-hero-bg--desktop pointer-events-none absolute inset-x-0 top-0 hidden lg:block">
     <ResponsiveImage src="/images/sections/09-pricing/bg.png" alt="" sizes="100vw" aria-hidden="true" loading="lazy" />
+    <div class="pricing-hero-fade absolute inset-0" aria-hidden="true"></div>
+  </div>
+
+  <div class="pricing-hero-bg pricing-hero-bg--mobile pointer-events-none absolute inset-x-0 top-0 lg:hidden">
+    <img
+      src="/images/sections/09-pricing/bg-mobile.png"
+      alt=""
+      class="pricing-hero-bg__img"
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+    />
     <div class="pricing-hero-fade absolute inset-0" aria-hidden="true"></div>
   </div>
   <div class="pricing-hero-fade-top pointer-events-none absolute inset-x-0 top-0 z-[1]" aria-hidden="true"></div>
@@ -33,7 +45,28 @@ import { asset } from '../lib/assets';
     <div class="pricing-cards pricing-cards--desktop mx-auto hidden max-w-[920px] lg:block">
       <div class="pricing-card pricing-card--antes">
         <div class="pricing-card__badge pricing-card__badge--muted">
-          <span aria-hidden="true">↘</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 61 61"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_446_181)">
+              <path
+                d="M59.8153 59.7438C60.6603 58.9038 61 57.8893 61 56.7064L61 15.5822C61 13.1407 59.2625 10.9838 56.8209 10.9838L53.0694 10.9838C50.6279 10.9838 48.3495 13.1407 48.3495 15.5822L48.3495 39.7643L10.0692 1.3378C9.23549 0.504767 8.19688 0.0455548 7.0109 0.0449222C5.82492 0.0449221 4.75026 0.504767 3.91659 1.3378L1.28339 3.99061C0.449726 4.82301 3.55723e-06 5.93499 3.50539e-06 7.12097C3.45355e-06 8.30695 0.463012 9.29812 1.29668 10.1312L39.5916 48.3027L15.6942 48.3027C13.252 48.3027 11.0306 50.5298 11.0306 52.9708L11.0306 56.7235C11.0306 59.1638 13.252 60.9538 15.6942 60.9538L56.8064 60.9538C57.9879 60.9532 58.9778 60.5864 59.8153 59.7438Z"
+                fill="white"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_446_181">
+                <rect
+                  width="61"
+                  height="61"
+                  fill="white"
+                  transform="translate(61 2.66639e-06) rotate(90)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
           <span>Antes</span>
         </div>
 
@@ -172,15 +205,35 @@ import { asset } from '../lib/assets';
     <div class="pricing-cards pricing-cards--mobile mx-auto lg:hidden">
       <div class="pricing-card pricing-card--antes">
         <div class="pricing-card__badge pricing-card__badge--muted">
-          <span aria-hidden="true">↘</span>
-          <span>Antes</span>
+          <svg
+          width="20"
+          height="20"
+          viewBox="0 0 61 61"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_446_181)">
+            <path
+              d="M59.8153 59.7438C60.6603 58.9038 61 57.8893 61 56.7064L61 15.5822C61 13.1407 59.2625 10.9838 56.8209 10.9838L53.0694 10.9838C50.6279 10.9838 48.3495 13.1407 48.3495 15.5822L48.3495 39.7643L10.0692 1.3378C9.23549 0.504767 8.19688 0.0455548 7.0109 0.0449222C5.82492 0.0449221 4.75026 0.504767 3.91659 1.3378L1.28339 3.99061C0.449726 4.82301 3.55723e-06 5.93499 3.50539e-06 7.12097C3.45355e-06 8.30695 0.463012 9.29812 1.29668 10.1312L39.5916 48.3027L15.6942 48.3027C13.252 48.3027 11.0306 50.5298 11.0306 52.9708L11.0306 56.7235C11.0306 59.1638 13.252 60.9538 15.6942 60.9538L56.8064 60.9538C57.9879 60.9532 58.9778 60.5864 59.8153 59.7438Z"
+              fill="white"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_446_181">
+              <rect
+                width="61"
+                height="61"
+                fill="white"
+                transform="translate(61 2.66639e-06) rotate(90)"></rect>
+            </clipPath>
+          </defs>
+        </svg>          <span>Antes</span>
         </div>
 
         <div class="pricing-card__body pricing-card__body--antes">
-          <p class="pricing-card__lead pricing-card__lead--muted">CONVIÉRTETE EN UN</p>
-          <h3 class="pricing-card__title pricing-card__title--muted">Importador</h3>
-          <div class="pricing-card__title-row pricing-card__title-row--muted">
-            <h3 class="pricing-card__title pricing-card__title--muted">Certificado</h3>
+          <p class=" text-md text-center">CONVIÉRTETE EN UN</p>
+          <h3 class="pricing-card__title pricing-card__title--muted text-center">Importador</h3>
+          <div class="text-center">
+            <h3 class=" text-xl text-[#9C9C9C] text-center">Certificado</h3>
           </div>
 
           <div class="pricing-card__price pricing-card__price--muted">
@@ -211,32 +264,32 @@ import { asset } from '../lib/assets';
         <div class="pricing-card__body">
           <div class="pricing-card__content">
             <p class="pricing-card__lead">CONVIÉRTETE EN UN</p>
-            <h3 class="pricing-card__title pricing-card__title--dark">Importador</h3>
+            <h3 class="pricing-card__title text-white">Importador</h3>
             <div class="pricing-card__title-row">
-              <h3 class="pricing-card__title pricing-card__title--dark">Certificado</h3>
+              <h3 class="text-black text-2xl font-semibold">Certificado</h3>
               <span class="pricing-card__pro">PRO</span>
             </div>
 
-            <div class="pricing-card__price pricing-card__price--dark">
-              <span class="pricing-card__currency pricing-card__currency--dark">S/</span>
-              <span class="pricing-card__amount pricing-card__amount--dark">550</span>
-              <span class="pricing-card__cents pricing-card__cents--dark">,00</span>
+            <div class="pricing-card__price pricing-card__price--dark relative">
+              <span class="text-white text-4xl font-semibold absolute bottom-0 left-0">S/</span>
+              <span class=" text-6xl font-semibold">550</span>
+              <span class="text-white text-4xl font-semibold absolute top-0 right-[-20px]">,00</span>
             </div>
 
             <hr class="pricing-card__divider" />
 
             <ol class="pricing-card__list">
-              <li class="pricing-card__list-heading">Temario del Curso</li>
-              <li><span>1.</span> Búsqueda de productos rentables</li>
-              <li><span>2.</span> Proveedores confiables en China</li>
-              <li><span>3.</span> Negociación con proveedores</li>
-              <li><span>4.</span> Cálculo de costos de importación</li>
+              <li class="text-xl font-semibold">Temario del Curso</li>
+              <li class="text-lg font-normal"><span>1.</span> Búsqueda de productos rentables</li>
+              <li class="text-lg font-normal"><span>2.</span> Proveedores confiables en China</li>
+              <li class="text-lg font-normal"><span>3.</span> Negociación con proveedores</li>
+              <li class="text-lg font-normal"><span>4.</span> Cálculo de costos de importación</li>
               <li><span>5.</span> Logística internacional</li>
-              <li><span>6.</span> Trámites aduaneros</li>
-              <li><span>7.</span> Carga consolidada y envíos</li>
-              <li><span>8.</span> Formas de pago internacionales</li>
+              <li class="text-lg font-normal"><span>6.</span> Trámites aduaneros</li>
+              <li class="text-lg font-normal"><span>7.</span> Carga consolidada y envíos</li>
+              <li class="text-lg font-normal"><span>8.</span> Formas de pago internacionales</li>
               <li><span>9.</span> Proceso completo de importación</li>
-              <li><span>10.</span> Estrategias para iniciar tu negocio importador</li>
+              <li class="text-lg font-normal"><span>10.</span> Estrategias para iniciar tu negocio importador</li>
             </ol>
 
             <a href="#contacto" class="pricing-card__cta">Quiero este plan</a>
@@ -405,8 +458,8 @@ import { asset } from '../lib/assets';
     overflow: hidden;
   }
 
-  .pricing-hero-bg img,
-  .pricing-hero-bg :global(img) {
+  .pricing-hero-bg--desktop img,
+  .pricing-hero-bg--desktop :global(img) {
     position: absolute;
     left: 0;
     width: 100%;
@@ -414,6 +467,16 @@ import { asset } from '../lib/assets';
     top: calc(-100% / 3);
     object-fit: cover;
     object-position: center center;
+  }
+
+  .pricing-hero-bg--mobile .pricing-hero-bg__img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ciudad arriba + laptop centrado (zona media de la foto) */
+    object-position: 50% 38%;
   }
 
   .pricing-hero-fade {
@@ -721,7 +784,7 @@ import { asset } from '../lib/assets';
 
   .pricing-code__rocket,
   .pricing-code :global(.pricing-code__rocket) {
-    width: clamp(96px, 9vw, 155px);
+    width: clamp(96px, 9vw, 205px);
     max-width: 155px;
     height: auto;
     flex-shrink: 0;
@@ -904,45 +967,42 @@ import { asset } from '../lib/assets';
 
   @media (max-width: 1023px) {
     #planes > .site-container {
-      padding-top: clamp(4rem, 16vw, 6rem);
+      /* La card ANTES va debajo del laptop (visible en el fondo) */
+      padding-top: clamp(14rem, 72vw, 19rem);
     }
 
-    .pricing-hero-bg {
-      height: clamp(48px, 12vw, 72px);
+    .pricing-hero-bg--mobile {
+      height: clamp(300px, 92vw, 480px);
     }
 
     .pricing-hero-fade-top {
-      height: clamp(48px, 12vw, 72px);
+      height: clamp(300px, 92vw, 480px);
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.35) 50%,
+        rgba(0, 0, 0, 0.12) 45%,
+        rgba(0, 0, 0, 0.65) 78%,
         #000 100%
       );
     }
 
-    .pricing-hero-fade {
+    .pricing-hero-bg--mobile .pricing-hero-fade {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.55) 45%,
-        #000 85%
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.7) 82%,
+        #000 100%
       );
-    }
-
-    .pricing-hero-bg img,
-    .pricing-hero-bg :global(img) {
-      height: 140%;
-      top: -15%;
     }
 
     .pricing-box-mobile,
     .pricing-section :global(.pricing-box-mobile) {
       right: 0;
       left: auto;
-      top: clamp(3rem, 12vw, 4.75rem);
-      width: min(36vw, 150px);
-      max-width: 150px;
+      top: clamp(12.5rem, 60vw, 17rem);
+      width: min(44vw, 190px);
+      max-width: 190px;
       z-index: 15;
       object-fit: contain;
       object-position: right center;
@@ -979,7 +1039,7 @@ import { asset } from '../lib/assets';
       right: auto;
       z-index: 1;
       width: min(86%, 19.5rem);
-      margin-bottom: -4.5rem;
+      margin-bottom: -1.5rem;
       background: rgba(40, 40, 40, 0.95);
     }
 
@@ -1007,20 +1067,20 @@ import { asset } from '../lib/assets';
     }
 
     .pricing-cards--mobile .pricing-card__body {
-      padding: 0;
+      padding: 2em 1.6em;
     }
 
     .pricing-cards--mobile .pricing-card__content {
       position: relative;
       z-index: 2;
       padding: 1rem 0.875rem 1.25rem;
-      text-align: center;
+      text-align: left;
     }
 
     .pricing-cards--mobile .pricing-card__lead {
       margin: 0 0 0.15rem;
       font-family: var(--font-sora);
-      font-size: clamp(0.5625rem, 2.4vw, 0.6875rem);
+      font-size: 1em;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1051,7 +1111,7 @@ import { asset } from '../lib/assets';
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: left;
       gap: 0.35rem;
       margin-bottom: 0.65rem;
     }
@@ -1065,7 +1125,7 @@ import { asset } from '../lib/assets';
       background: #000;
       padding: 0.05rem 0.35rem;
       font-family: var(--font-sora);
-      font-size: clamp(0.75rem, 3vw, 0.95rem);
+      font-size: 1em;
       font-weight: 600;
       color: #ff5410;
     }
@@ -1188,8 +1248,8 @@ import { asset } from '../lib/assets';
 
     .pricing-promo--mobile .pricing-code__rocket,
     .pricing-promo--mobile .pricing-code :global(.pricing-code__rocket) {
-      width: clamp(56px, 16vw, 80px);
-      max-width: 80px;
+      width: clamp(100px, 16vw, 120px);
+      max-width: 180px;
     }
 
     .pricing-promo--mobile .pricing-code__main {
