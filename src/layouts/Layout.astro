@@ -36,12 +36,26 @@ const {
     <script is:inline>
       (function () {
         var nav = performance.getEntriesByType('navigation')[0];
-        if (nav && nav.type === 'reload') {
-          if (window.location.hash) {
-            history.replaceState(null, '', window.location.pathname + window.location.search);
-          }
+        if (!nav || nav.type !== 'reload') return;
+
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+
+        if (window.location.hash) {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+
+        function scrollTop() {
           window.scrollTo(0, 0);
         }
+
+        scrollTop();
+        document.addEventListener('DOMContentLoaded', scrollTop, { once: true });
+        window.addEventListener('load', scrollTop, { once: true });
+        window.addEventListener('pageshow', function (event) {
+          if (!event.persisted) scrollTop();
+        });
       })();
     </script>
   </head>
