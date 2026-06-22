@@ -7,19 +7,21 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const OUTPUT = join(ROOT, 'cdn-assets', 'videos');
 
+const SOURCES = join(ROOT, 'assets-source', 'videos');
+
 const sources = [
   {
-    input: process.argv[2] ?? join(ROOT, '..', '..', '..', 'Downloads', 'drive-download-20260617T143642Z-3-001', 'LANDING 2.0.mp4'),
+    input: process.argv[2] ?? join(SOURCES, 'LANDING 2.0.mp4'),
     output: 'landing-02.mp4',
     scale: '1280:-2',
   },
   {
-    input: process.argv[3] ?? join(ROOT, '..', '..', '..', 'Downloads', 'drive-download-20260617T143642Z-3-001', 'TEST 1.mp4'),
+    input: process.argv[3] ?? join(SOURCES, 'TEST 1.mp4'),
     output: 'testimonial-1.mp4',
     scale: '720:-2',
   },
   {
-    input: process.argv[4] ?? join(ROOT, '..', '..', '..', 'Downloads', 'drive-download-20260617T143642Z-3-001', 'TEST 2.mp4'),
+    input: process.argv[4] ?? join(SOURCES, 'TEST 2.mp4'),
     output: 'testimonial-2.mp4',
     scale: '720:-2',
   },

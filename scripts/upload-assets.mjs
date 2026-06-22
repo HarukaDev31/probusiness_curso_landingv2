@@ -20,7 +20,6 @@ const command = [
   'aws s3 sync',
   `"${SOURCE}/"`,
   `"${destination}"`,
-  '--delete',
   '--cache-control "public,max-age=31536000,immutable"',
 ].join(' ');
 
