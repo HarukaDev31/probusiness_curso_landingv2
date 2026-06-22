@@ -24,7 +24,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={optimizedImage('/images/sections/02-hero/hero-cajas.png')} />
-    <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+    <link rel="icon" type="image/svg+xml" href={asset('/favicon.png')} />
     <link rel="preconnect" href="https://cdn.probusiness.pe" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +33,17 @@ const {
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        var nav = performance.getEntriesByType('navigation')[0];
+        if (nav && nav.type === 'reload') {
+          if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+          window.scrollTo(0, 0);
+        }
+      })();
+    </script>
   </head>
   <body class="min-h-screen bg-black text-white antialiased">
     <slot />

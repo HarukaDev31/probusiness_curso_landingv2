@@ -1,6 +1,9 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
 import { asset } from '../lib/assets';
+import { leadFormConfig } from '../lib/leadForm';
+
+const { apiUrl, formToken, campaignCode, graciasPath } = leadFormConfig;
 
 const fields = [
   {
@@ -63,26 +66,37 @@ const fields = [
         </span>
       </h2>
 
-      <form class="contact-panel__form" id="contact-form">
+      <form
+        class="contact-panel__form"
+        id="contact-form"
+        novalidate
+        data-api-url={apiUrl}
+        data-form-token={formToken}
+        data-campaign-code={campaignCode}
+        data-gracias-path={graciasPath}
+      >
         {
           fields.map((field) => (
-            <div class="contact-field">
+            <div class="contact-field" data-field={field.name}>
               <label for={field.id}>{field.label}</label>
               <input
                 type={field.type}
                 id={field.id}
                 name={field.name}
                 placeholder={field.placeholder}
+                autocomplete={field.type === 'email' ? 'email' : field.type === 'tel' ? 'tel' : 'name'}
+                required
               />
+              <p class="contact-field__error hidden" id={`${field.id}-error`} role="alert"></p>
             </div>
           ))
         }
 
-        <div class="contact-field">
+        <div class="contact-field" data-field="experiencia_importando">
           <label for="experiencia">¿Tienes experiencia importando?</label>
           <div class="contact-field__select">
-            <select id="experiencia" name="experiencia">
-              <option value="">Selecciona una opción</option>
+            <select id="experiencia" name="experiencia_importando" required>
+              <option value="" disabled selected>Selecciona una opción</option>
               <option value="si">Sí, tengo experiencia</option>
               <option value="no">No, soy principiante</option>
               <option value="poca">Tengo poca experiencia</option>
@@ -93,17 +107,14 @@ const fields = [
               aria-hidden="true"
             />
           </div>
+          <p class="contact-field__error hidden" id="experiencia-error" role="alert"></p>
         </div>
 
-        <button type="submit" class="contact-panel__submit">
+        <button type="submit" class="contact-panel__submit" id="contact-submit">
           Inscribirme ahora
         </button>
 
-        <p id="form-success" class="contact-panel__success hidden">
-          ¡Gracias! Un asesor te contactará pronto.
-        </p>
-
-        <p class="contact-panel__note">
+        <p id="form-feedback" class="contact-panel__note">
           Un asesor te contactará para confirmar tu inscripción
         </p>
       </form>
@@ -282,6 +293,33 @@ const fields = [
   .contact-field input:focus,
   .contact-field__select select:focus {
     border-color: #ff6a29;
+  }
+
+  .contact-field--error input,
+  .contact-field--error .contact-field__select select {
+    border-color: #ff6a29;
+  }
+
+  .contact-field__error {
+    margin: 0;
+    font-family: var(--font-epilogue);
+    font-size: clamp(0.7rem, 1cqw, 0.875rem);
+    line-height: 1.3;
+    color: #ff6a29;
+  }
+
+  .contact-field__error.hidden {
+    display: none;
+  }
+
+  .contact-panel__note--error {
+    color: #ff6a29;
+    text-align: center;
+  }
+
+  .contact-panel__submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 
   .contact-field__select {
@@ -603,9 +641,128 @@ const fields = [
 </style>
 
 <script>
-  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    document.getElementById('form-success')?.classList.remove('hidden');
-    e.target.reset();
+  import {
+    formatWhatsappDisplay,
+    normalizeWhatsapp,
+    submitLeadForm,
+    validateLeadForm,
+  } from '../lib/leadForm';
+
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+  const submitButton = document.getElementById('contact-submit');
+  const whatsappInput = document.getElementById('whatsapp');
+
+  function setFieldError(fieldName, message) {
+    const field = form?.querySelector(`[data-field="${fieldName}"]`);
+    const errorEl = document.getElementById(
+      fieldName === 'experiencia_importando' ? 'experiencia-error' : `${fieldName}-error`,
+    );
+    const control = field?.querySelector('input, select');
+
+    if (!(field instanceof HTMLElement) || !(errorEl instanceof HTMLElement)) return;
+
+    if (message) {
+      field.classList.add('contact-field--error');
+      errorEl.textContent = message;
+      errorEl.classList.remove('hidden');
+      control?.setAttribute('aria-invalid', 'true');
+    } else {
+      field.classList.remove('contact-field--error');
+      errorEl.textContent = '';
+      errorEl.classList.add('hidden');
+      control?.removeAttribute('aria-invalid');
+    }
+  }
+
+  function clearFieldErrors() {
+    ['nombre', 'whatsapp', 'email', 'experiencia_importando'].forEach((field) =>
+      setFieldError(field, ''),
+    );
+  }
+
+  function readFormValues() {
+    if (!(form instanceof HTMLFormElement)) {
+      return {
+        nombre: '',
+        whatsapp: '',
+        email: '',
+        experiencia_importando: '',
+      };
+    }
+
+    const formData = new FormData(form);
+    return {
+      nombre: String(formData.get('nombre') ?? ''),
+      whatsapp: String(formData.get('whatsapp') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      experiencia_importando: String(formData.get('experiencia_importando') ?? ''),
+    };
+  }
+
+  whatsappInput?.addEventListener('input', (event) => {
+    const input = event.currentTarget;
+    if (!(input instanceof HTMLInputElement)) return;
+    input.value = formatWhatsappDisplay(input.value);
+  });
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement) || !(feedback instanceof HTMLElement)) return;
+    if (!(submitButton instanceof HTMLButtonElement)) return;
+
+    clearFieldErrors();
+    feedback.classList.remove('contact-panel__note--error');
+
+    const values = readFormValues();
+    const errors = validateLeadForm({
+      ...values,
+      whatsapp: normalizeWhatsapp(values.whatsapp),
+    });
+
+    const errorEntries = Object.entries(errors);
+    if (errorEntries.length > 0) {
+      errorEntries.forEach(([field, message]) => setFieldError(field, message));
+      feedback.textContent = 'Revisa los campos marcados antes de continuar.';
+      feedback.classList.add('contact-panel__note--error');
+      return;
+    }
+
+    const apiUrl = form.dataset.apiUrl;
+    if (!apiUrl) {
+      feedback.textContent = 'El formulario no está configurado. Contacta al administrador.';
+      feedback.classList.add('contact-panel__note--error');
+      return;
+    }
+
+    submitButton.disabled = true;
+    feedback.textContent = 'Enviando...';
+    feedback.classList.remove('contact-panel__note--error');
+
+    try {
+      const response = await submitLeadForm({
+        nombre: values.nombre.trim(),
+        whatsapp: values.whatsapp,
+        email: values.email.trim(),
+        experiencia_importando: values.experiencia_importando,
+      });
+
+      if (!response.ok) {
+        feedback.textContent =
+          'No se pudo enviar tu registro. Inténtalo nuevamente en unos minutos.';
+        feedback.classList.add('contact-panel__note--error');
+        return;
+      }
+
+      sessionStorage.setItem('leadFormConfirmed', '1');
+      sessionStorage.setItem('leadFormConfirmedAt', String(Date.now()));
+      window.location.href = form.dataset.graciasPath || '/gracias';
+    } catch {
+      feedback.textContent =
+        'No se pudo enviar tu registro. Verifica tu conexión e intenta de nuevo.';
+      feedback.classList.add('contact-panel__note--error');
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 </script>
