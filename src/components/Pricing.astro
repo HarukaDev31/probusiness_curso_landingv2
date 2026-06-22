@@ -348,7 +348,7 @@ import { asset } from '../lib/assets';
         PROMOCIÓN POR TIEMPO LIMITADO
       </p>
 
-      <div class="pricing-countdown-block mx-auto mt-[80px]">
+      <div class="pricing-countdown-block mx-auto mt-[40px]">
         <div class="pricing-countdown">
           <div class="pricing-countdown__unit">
             <p class="pricing-countdown__value" data-unit="days">02</p>
@@ -1350,7 +1350,6 @@ import { asset } from '../lib/assets';
       align-items: center;
       width: 100%;
       margin-top: clamp(2rem, 4vw, 3rem);
-      gap: clamp(1.5rem, 3vw, 2.5rem);
     }
 
     .pricing-cards--mobile,
@@ -1384,11 +1383,8 @@ import { asset } from '../lib/assets';
   bindCopyButton("copy-code", "copy-label");
   bindCopyButton("copy-code-mobile", "copy-label-mobile");
 
-  const target = new Date();
-  target.setDate(target.getDate() + 2);
-  target.setHours(target.getHours() + 15);
-  target.setMinutes(37);
-  target.setSeconds(28);
+  // 30 de junio 2026, 23:59:59 hora Perú (America/Lima, UTC-5)
+  const target = new Date("2026-06-30T23:59:59-05:00");
 
   function pad(n) {
     return String(n).padStart(2, "0");

@@ -360,6 +360,15 @@ const fields = [
   }
 
   @media (min-width: 1024px) {
+    .contact-section {
+      --contact-h: min(70vh, 48rem);
+      width: min(100%, calc(var(--contact-h) / var(--ratio)));
+      height: var(--contact-h);
+      min-height: unset;
+      aspect-ratio: unset;
+      margin-inline: auto;
+    }
+
     .contact-visual__puntos {
       display: none;
     }
