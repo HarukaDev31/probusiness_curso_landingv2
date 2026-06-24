@@ -50,16 +50,32 @@ const statsVideo = videoAsset('/videos/landing-02.mp4');
       </span>
     </div>
 
-    <div id="video-mobile" class="relative w-full">
+    <div id="video-mobile" class="stats-video-wrap relative w-full">
       <video
         class="stats-video aspect-video w-full rounded-[10px] bg-black object-cover"
         src={statsVideo}
-        controls
         playsinline
         preload="metadata"
         controlslist="nodownload"
         title="Clase gratuita ProBusiness"
+        data-stats-video
       />
+      <button
+        type="button"
+        class="stats-play-btn"
+        aria-label="Reproducir clase gratuita"
+        data-stats-play
+      >
+        <span class="stats-play-btn__circle">
+          <img
+            src={asset('/images/sections/03-video-stats/play-overlay.svg')}
+            alt=""
+            class="stats-play-btn__icon"
+            aria-hidden="true"
+          />
+        </span>
+        <span class="stats-play-btn__label font-epilogue font-semibold text-white">Reproducir</span>
+      </button>
     </div>
 
     <div class="stats-mobile-grid grid grid-cols-3 divide-x divide-white/30">
@@ -128,16 +144,31 @@ const statsVideo = videoAsset('/videos/landing-02.mp4');
         </span>
       </div>
       <div class="mt-4 w-full">
-        <div id="video" class="relative w-[95%] rounded-[20px]">
+        <div id="video" class="stats-video-wrap relative w-[95%] rounded-[20px]">
           <video
-            class="stats-video h-[700px] w-full rounded-[10px] bg-black"
+            class="stats-video h-[700px] w-full rounded-[10px] bg-black object-cover"
             src={statsVideo}
-            controls
             playsinline
             preload="metadata"
             controlslist="nodownload"
             title="Clase gratuita ProBusiness"
+            data-stats-video
           />
+          <button
+            type="button"
+            class="stats-play-btn"
+            aria-label="Reproducir clase gratuita"
+            data-stats-play
+          >
+            <span class="stats-play-btn__circle">
+              <img
+                src={asset('/images/sections/03-video-stats/play-overlay.svg')}
+                alt=""
+                class="stats-play-btn__icon"
+                aria-hidden="true"
+              />
+            </span>
+          </button>
         </div>
       </div>
     </div>
@@ -213,7 +244,98 @@ const statsVideo = videoAsset('/videos/landing-02.mp4');
   </div>
 </section>
 
+<script>
+  function initStatsVideoPlayers() {
+    document.querySelectorAll('.stats-video-wrap').forEach((wrap) => {
+      if (wrap.dataset.bound === 'true') return;
+      wrap.dataset.bound = 'true';
+
+      const video = wrap.querySelector('[data-stats-video]');
+      const playBtn = wrap.querySelector('[data-stats-play]');
+      if (!(video instanceof HTMLVideoElement) || !(playBtn instanceof HTMLButtonElement)) return;
+
+      const hidePlay = () => wrap.classList.add('is-playing');
+      const showPlay = () => wrap.classList.remove('is-playing');
+
+      playBtn.addEventListener('click', () => {
+        video.controls = true;
+        video.play();
+        hidePlay();
+      });
+
+      video.addEventListener('play', hidePlay);
+      video.addEventListener('pause', () => {
+        if (video.currentTime === 0 || video.ended) showPlay();
+      });
+      video.addEventListener('ended', showPlay);
+    });
+  }
+
+  initStatsVideoPlayers();
+  document.addEventListener('astro:page-load', initStatsVideoPlayers);
+</script>
+
 <style>
+  .stats-video-wrap:not(.is-playing) .stats-video {
+    pointer-events: none;
+  }
+
+  .stats-play-btn {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: inherit;
+    cursor: pointer;
+    transition: opacity 0.25s ease, background 0.25s ease;
+  }
+
+  .stats-video-wrap.is-playing .stats-play-btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .stats-play-btn:hover {
+    background: rgba(0, 0, 0, 0.38);
+  }
+
+  .stats-play-btn__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(4.5rem, 14vw, 6.5rem);
+    height: clamp(4.5rem, 14vw, 6.5rem);
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #ff5410 0%, #ff733b 100%);
+    box-shadow:
+      0 0 0 6px rgba(255, 106, 41, 0.28),
+      0 8px 40px rgba(255, 84, 16, 0.65);
+    transition: transform 0.2s ease;
+  }
+
+  .stats-play-btn:hover .stats-play-btn__circle {
+    transform: scale(1.06);
+  }
+
+  .stats-play-btn__icon {
+    width: 32%;
+    height: 32%;
+    margin-left: 6%;
+    object-fit: contain;
+  }
+
+  .stats-play-btn__label {
+    font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  }
+
   .stats-mobile-cta {
     padding: 0.85rem 1rem;
     font-size: clamp(1.25rem, 5vw, 1.5rem);
