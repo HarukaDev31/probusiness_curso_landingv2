@@ -747,11 +747,25 @@ const fields = [
         experiencia_importando: values.experiencia_importando,
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        feedback.textContent =
-          'No se pudo enviar tu registro. Inténtalo nuevamente en unos minutos.';
+        if (response.status === 422 && data.errors) {
+          const first = Object.values(data.errors)[0];
+          const msg = Array.isArray(first) ? first[0] : String(first);
+          feedback.textContent =
+            msg || data.message || 'Revisa los datos e inténtalo de nuevo.';
+        } else {
+          feedback.textContent =
+            data.message ||
+            'No se pudo enviar tu registro. Inténtalo nuevamente en unos minutos.';
+        }
         feedback.classList.add('contact-panel__note--error');
         return;
+      }
+
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
       }
 
       sessionStorage.setItem('leadFormConfirmed', '1');

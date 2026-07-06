@@ -1,5 +1,6 @@
 export const leadFormConfig = {
   apiUrl:
+    import.meta.env.PUBLIC_LANDING_CURSO_LEAD_ENDPOINT ??
     import.meta.env.PUBLIC_LANDING_CURSO_API_URL ??
     '/api/public/landing-curso/leads',
   formToken: import.meta.env.PUBLIC_LANDING_CURSO_FORM_TOKEN ?? '',
@@ -74,6 +75,7 @@ export async function submitLeadForm(values: LeadFormValues): Promise<Response> 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      Accept: 'application/json',
       ...(formToken ? { Authorization: `Bearer ${formToken}` } : {}),
     },
     body: JSON.stringify({

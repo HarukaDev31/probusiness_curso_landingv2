@@ -14,7 +14,8 @@
     "encode:videos": "node scripts/encode-videos.mjs",
     "upload:assets": "node scripts/upload-assets.mjs",
     "deploy:assets": "npm run optimize:images && npm run upload:assets",
-    "deploy:videos": "npm run encode:videos && npm run upload:assets"
+    "deploy:videos": "npm run encode:videos && npm run upload:assets",
+    "deploy:web": "node scripts/deploy-web.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",
