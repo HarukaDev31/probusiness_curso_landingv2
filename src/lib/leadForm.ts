@@ -84,6 +84,7 @@ export async function submitLeadForm(values: LeadFormValues): Promise<Response> 
       email: values.email.trim(),
       experiencia_importando: values.experiencia_importando,
       codigo_campana: campaignCode,
+      form_source: 'landing_curso_v2',
     }),
   });
 }
