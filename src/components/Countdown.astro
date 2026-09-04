@@ -33,11 +33,7 @@ const units = [
 </section>
 
 <script>
-  const target = new Date();
-  target.setDate(target.getDate() + 2);
-  target.setHours(target.getHours() + 15);
-  target.setMinutes(37);
-  target.setSeconds(28);
+  const target = new Date(2026, 9, 6, 23, 59, 59);
 
   function pad(n: number) {
     return String(n).padStart(2, '0');

@@ -35,14 +35,14 @@ const thanksDescription =
       <article class="thanks-card">
         <img
           class="thanks-logo"
-          src={asset('/images/sections/01-header/logo-full.png')}
+          src={asset('/images/sections/01-header/logo-full.webp')}
           alt="Pro Business"
         />
 
         <div class="thanks-content">
           <img
             class="thanks-icon"
-            src="https://cdn.probusiness.pe/landingcurso/figma/thanks/thanks-envelope-green.webp"
+            src={asset('/images/sections/01-header/thanks-envelope-orange.webp')}
             alt="Mensaje recibido"
             width="260"
             height="260"
@@ -98,7 +98,7 @@ const thanksDescription =
   .thanks-content {
     width: min(1050px, 96%);
     margin: 0 auto;
-    background: linear-gradient(125deg, #111f17 0%, #12261b 58%, #102117 100%);
+    background: linear-gradient(125deg, #1f1410 0%, #26170f 58%, #21140f 100%);
     border-radius: 28px;
     display: grid;
     grid-template-columns: minmax(180px, 260px) 1fr;
@@ -119,8 +119,8 @@ const thanksDescription =
     border-radius: 50%;
     background: radial-gradient(
       circle,
-      rgba(50, 221, 128, 0.55) 0%,
-      rgba(50, 221, 128, 0) 70%
+      rgba(255, 106, 41, 0.55) 0%,
+      rgba(255, 106, 41, 0) 70%
     );
     pointer-events: none;
   }
@@ -142,7 +142,7 @@ const thanksDescription =
   }
 
   .thanks-copy h1 span {
-    color: #32dd80;
+    color: #ff6a29;
   }
 
   .thanks-copy p {
@@ -163,8 +163,8 @@ const thanksDescription =
     border-radius: 10px;
     border: none;
     text-decoration: none;
-    background: linear-gradient(90deg, #25cf43 0%, #61fd7d 100%);
-    color: #001607;
+    background: linear-gradient(90deg, #ff5410 0%, #ff733b 100%);
+    color: #fff;
     font-family: var(--font-epilogue);
     font-size: 1.05rem;
     font-weight: 700;
