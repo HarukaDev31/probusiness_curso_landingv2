@@ -1,9 +1,11 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
 import { asset } from '../lib/assets';
-import { fetchCountdownEndsAt } from '../lib/countdown';
+import { countdownConfig } from '../lib/countdown';
 
-const countdownEndsAt = await fetchCountdownEndsAt();
+const countdownApiUrl = countdownConfig.apiUrl;
+const countdownFormToken = countdownConfig.formToken;
+const countdownFallbackEndsAt = countdownConfig.fallbackEndsAt;
 ---
 
 <section id="planes" class="pricing-section relative overflow-hidden bg-black">
@@ -1388,9 +1390,10 @@ const countdownEndsAt = await fetchCountdownEndsAt();
 
 </script>
 
-<script define:vars={{ countdownEndsAt }}>
+<script define:vars={{ countdownApiUrl, countdownFormToken, countdownFallbackEndsAt }}>
   (function () {
-    const target = new Date(countdownEndsAt);
+    let target = new Date(countdownFallbackEndsAt);
+    let timerId = null;
 
     function pad(n) {
       return String(n).padStart(2, "0");
@@ -1412,7 +1415,42 @@ const countdownEndsAt = await fetchCountdownEndsAt();
       });
     }
 
-    tick();
-    setInterval(tick, 1000);
+    function startTicker() {
+      tick();
+      if (timerId) clearInterval(timerId);
+      timerId = setInterval(tick, 1000);
+    }
+
+    async function loadEndsAt() {
+      if (!countdownApiUrl || !countdownFormToken) return countdownFallbackEndsAt;
+
+      try {
+        const response = await fetch(countdownApiUrl, {
+          headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + countdownFormToken,
+          },
+        });
+        if (!response.ok) return countdownFallbackEndsAt;
+
+        const json = await response.json();
+        const endsAt = json && json.data && json.data.ends_at
+          ? String(json.data.ends_at).trim()
+          : "";
+        if (!json.success || !endsAt) return countdownFallbackEndsAt;
+        return endsAt;
+      } catch {
+        return countdownFallbackEndsAt;
+      }
+    }
+
+    startTicker();
+    loadEndsAt().then(function (endsAt) {
+      const next = new Date(endsAt);
+      if (!Number.isNaN(next.getTime())) {
+        target = next;
+        tick();
+      }
+    });
   })();
 </script>

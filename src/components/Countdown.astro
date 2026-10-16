@@ -1,5 +1,5 @@
 ---
-import { fetchCountdownEndsAt } from '../lib/countdown';
+import { countdownConfig } from '../lib/countdown';
 
 const units = [
   { key: 'days', label: 'DÍAS' },
@@ -8,7 +8,9 @@ const units = [
   { key: 'seconds', label: 'SEG' },
 ];
 
-const countdownEndsAt = await fetchCountdownEndsAt();
+const countdownApiUrl = countdownConfig.apiUrl;
+const countdownFormToken = countdownConfig.formToken;
+const countdownFallbackEndsAt = countdownConfig.fallbackEndsAt;
 ---
 
 <section class="site-section py-8 lg:py-12">
@@ -36,9 +38,10 @@ const countdownEndsAt = await fetchCountdownEndsAt();
   </div>
 </section>
 
-<script define:vars={{ countdownEndsAt }}>
+<script define:vars={{ countdownApiUrl, countdownFormToken, countdownFallbackEndsAt }}>
   (function () {
-    const target = new Date(countdownEndsAt);
+    let target = new Date(countdownFallbackEndsAt);
+    let timerId = null;
 
     function pad(n) {
       return String(n).padStart(2, '0');
@@ -60,7 +63,42 @@ const countdownEndsAt = await fetchCountdownEndsAt();
       });
     }
 
-    tick();
-    setInterval(tick, 1000);
+    function startTicker() {
+      tick();
+      if (timerId) clearInterval(timerId);
+      timerId = setInterval(tick, 1000);
+    }
+
+    async function loadEndsAt() {
+      if (!countdownApiUrl || !countdownFormToken) return countdownFallbackEndsAt;
+
+      try {
+        const response = await fetch(countdownApiUrl, {
+          headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer ' + countdownFormToken,
+          },
+        });
+        if (!response.ok) return countdownFallbackEndsAt;
+
+        const json = await response.json();
+        const endsAt = json && json.data && json.data.ends_at
+          ? String(json.data.ends_at).trim()
+          : '';
+        if (!json.success || !endsAt) return countdownFallbackEndsAt;
+        return endsAt;
+      } catch {
+        return countdownFallbackEndsAt;
+      }
+    }
+
+    startTicker();
+    loadEndsAt().then(function (endsAt) {
+      const next = new Date(endsAt);
+      if (!Number.isNaN(next.getTime())) {
+        target = next;
+        tick();
+      }
+    });
   })();
 </script>
