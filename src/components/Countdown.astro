@@ -1,10 +1,14 @@
 ---
+import { fetchCountdownEndsAt } from '../lib/countdown';
+
 const units = [
   { key: 'days', label: 'DÍAS' },
   { key: 'hours', label: 'HORAS' },
   { key: 'minutes', label: 'MIN' },
   { key: 'seconds', label: 'SEG' },
 ];
+
+const countdownEndsAt = await fetchCountdownEndsAt();
 ---
 
 <section class="site-section py-8 lg:py-12">
@@ -32,29 +36,31 @@ const units = [
   </div>
 </section>
 
-<script>
-  const target = new Date(2026, 9, 6, 23, 59, 59);
+<script define:vars={{ countdownEndsAt }}>
+  (function () {
+    const target = new Date(countdownEndsAt);
 
-  function pad(n: number) {
-    return String(n).padStart(2, '0');
-  }
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
 
-  function tick() {
-    const diff = Math.max(0, target.getTime() - Date.now());
-    const s = Math.floor(diff / 1000);
-    const values: Record<string, number> = {
-      days: Math.floor(s / 86400),
-      hours: Math.floor((s % 86400) / 3600),
-      minutes: Math.floor((s % 3600) / 60),
-      seconds: s % 60,
-    };
+    function tick() {
+      const diff = Math.max(0, target.getTime() - Date.now());
+      const s = Math.floor(diff / 1000);
+      const values = {
+        days: Math.floor(s / 86400),
+        hours: Math.floor((s % 86400) / 3600),
+        minutes: Math.floor((s % 3600) / 60),
+        seconds: s % 60,
+      };
 
-    document.querySelectorAll('[data-unit]').forEach((el) => {
-      const unit = el.getAttribute('data-unit');
-      if (unit) el.textContent = pad(values[unit] ?? 0);
-    });
-  }
+      document.querySelectorAll('[data-unit]').forEach((el) => {
+        const unit = el.getAttribute('data-unit');
+        if (unit) el.textContent = pad(values[unit] ?? 0);
+      });
+    }
 
-  tick();
-  setInterval(tick, 1000);
+    tick();
+    setInterval(tick, 1000);
+  })();
 </script>
