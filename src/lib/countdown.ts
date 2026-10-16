@@ -1,6 +1,13 @@
 export const countdownConfig = {
-  apiUrl: import.meta.env.PUBLIC_LANDING_CONSOLIDADO_COUNTDOWN_ENDPOINT ?? '',
-  formToken: import.meta.env.PUBLIC_LANDING_CONSOLIDADO_FORM_TOKEN ?? '',
+  apiUrl:
+    import.meta.env.PUBLIC_LANDING_CURSO_COUNTDOWN_ENDPOINT ??
+    import.meta.env.PUBLIC_LANDING_CONSOLIDADO_COUNTDOWN_ENDPOINT ??
+    'https://intranetback.probusiness.pe/api/public/landing-consolidado/countdown',
+  /** Mismo Bearer del form de curso (ya existe en Netlify). */
+  formToken:
+    import.meta.env.PUBLIC_LANDING_CURSO_FORM_TOKEN ??
+    import.meta.env.PUBLIC_LANDING_CONSOLIDADO_FORM_TOKEN ??
+    '',
   fallbackEndsAt: '2026-10-06T23:59:59-05:00',
 };
 
@@ -11,7 +18,7 @@ interface CountdownApiResponse {
   };
 }
 
-/** Fecha fin del contador (API consolidado + mismo Bearer FORM_TOKEN). */
+/** Fecha fin del contador (API pública + Bearer del form curso). */
 export async function fetchCountdownEndsAt(): Promise<string> {
   if (!countdownConfig.apiUrl || !countdownConfig.formToken) {
     return countdownConfig.fallbackEndsAt;
